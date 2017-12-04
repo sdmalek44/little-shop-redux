@@ -75,7 +75,7 @@ On an individual station show page the additional information should be present:
 * [ ] Create a new condition
 * [ ] Update a condition
 * [ ] Delete a station (from both index or show)
-* [ ] Attributes include: duration, start date, start station, end date, end station, bike ID, subscription type
+* [ ] Attributes include: date, max_temperature, mean_temperature, min_temperature, mean_humidity, mean_visibility (in Miles), mean_wind_speed (mph), precipitation (inches)
 * [ ] Conditions are paginated by groups of 30
 
 ### Iteration 8
