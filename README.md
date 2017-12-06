@@ -211,7 +211,7 @@ Additionally, users should be able to delete a the weather conditions for a part
 
 ### Iteration 8
 
-Add the `weather.csv` file to your `db/csv` directory, and update your `seed.rb` file so that it also imports the information in `weather.csv`. Be sure to adjust your seed file so that when it is run it does not create duplicate data.
+Add the `weather.csv` file to your `db/csv` directory, and update your `seed.rb` file so that it also imports the information in `weather.csv`. Be sure to adjust your seed file so that when it is run it does not create duplicate data for a specific date. You can scope by a single zip code even though there are multiple zip codes in the data set. 
 
 ### Iteration 9
 
