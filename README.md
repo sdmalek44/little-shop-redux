@@ -2,7 +2,7 @@
 layout: page
 ---
 
-# Little Shop
+# Little Shop Redux
 
 ## Abstract
 
