@@ -137,7 +137,7 @@ At the end of this iteration, you should be able to view an index of all items, 
 
 ### Iteration 6
 
-- Seed Item [CSV](data/items/csv).
+- Seed Item [CSV](data/items.csv).
 
 ### Iteration 7
 
