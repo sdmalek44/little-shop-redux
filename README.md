@@ -168,5 +168,5 @@ Create a merchants dashboard route. When you visit `/merchants-dashboard` users 
 ## Extensions
 
 * Use [Google Charts](https://developers.google.com/chart/) to display information on one or more of your dashboards.
-* Read about [JSON](http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html). Create an endpoint at `api/v1/stations/:id` that responds to requests with JSON instead of HTML.
+* Read about [JSON](http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html). Create an endpoint at `api/v1/items/:id` that responds to requests with JSON instead of HTML.
 * Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack)
