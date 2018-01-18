@@ -8,22 +8,6 @@ layout: page
 
 In this project you'll use Ruby, Sinatra, and Activerecord to build a site that shows items by categories and analyzes those items.
 
-This application will collect data in two ways:
-  1. Through web forms allowing users to enter trip/station/weather information
-  2. By consuming CSV files with historical information for stations, trips, and weather. In addition to creating and storing this information for viewing at a later date, this application will provide a number of user dashboards with higher level analysis of trends in bike share usage.
-
-At a high level, this project will develop along the following path:
-
-* **Iteration 1**: Allow users to save and view information related to bike share stations.
-* **Iteration 2**: Create a seed file to consume information on the seventy existing bike share stations in San Francisco.
-* **Iteration 3**: Create a station dashboard with analysis of station information (split by city, date installed, number of of bicycle docks)
-* **Iteration 4**: Allow users to save and view information related to trips taken.
-* **Iteration 5**: Update the seed file to consume information on the nearly 670,000 trips taken between August 29, 2013, and August 31, 2015.
-* **Iteration 6**: Add information to the station dashboard using trip information, and create a trip dashboard with an analysis of trips taken.
-* **Iteration 7**: Allow users to enter weather information.
-* **Iteration 8**: Update the seed file to consume weather information.
-* **Iteration 9**: Create a weather dashboard and update the trip dashboard with additional analytics regarding the relationship between weather and trips taken.
-
 ## Learning Goals
 
 ### ActiveRecord
