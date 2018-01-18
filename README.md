@@ -94,7 +94,7 @@ At the end of this iteration, you should be able to view an index of all merchan
 
 ### Iteration 2
 
-Seed Merchants from CSV.
+Seed Merchants from [CSV](data/merchants.csv).
 
 ### Iteration 3
 
@@ -137,7 +137,7 @@ At the end of this iteration, you should be able to view an index of all items, 
 
 ### Iteration 6
 
-- Seed item csv.
+- Seed Item [CSV](data/items/csv).
 
 ### Iteration 7
 
