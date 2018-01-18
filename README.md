@@ -1,10 +1,14 @@
-# Bike Share
+---
+layout: page
+---
+
+# Little Shop
 
 ## Abstract
 
-In this project you'll use Ruby, Sinatra, and Activerecord to build a site that analyzes bike share usage in San Francisco.
+In this project you'll use Ruby, Sinatra, and Activerecord to build a site that shows items by categories and analyzes those items.
 
-This application will collect data in two ways: 
+This application will collect data in two ways:
   1. Through web forms allowing users to enter trip/station/weather information
   2. By consuming CSV files with historical information for stations, trips, and weather. In addition to creating and storing this information for viewing at a later date, this application will provide a number of user dashboards with higher level analysis of trends in bike share usage.
 
@@ -24,19 +28,19 @@ At a high level, this project will develop along the following path:
 
 ### ActiveRecord
 
-* Use ActiveRecord migrations to create a normalized database
-* Use intermediate ActiveRecord queries to calculate and report on information in the database
-* Utilize ActiveRecord methods and relationships to efficiently query the database
+* Use ActiveRecord migrations to create a normalized database.
+* Use beginner/intermediate ActiveRecord queries to calculate and report on information in the database.
+* Utilize ActiveRecord methods and relationships to efficiently query the database.
 
 ### User Experience and Conventions
 
-* Use Sinatra and ERB templates to render views to create, read, update, and delete resources using RESTful routes and appropriate HTTP verbs
-* Use Sinatra and ERB templates to display a dashboard not related to a specific resource saved in the database
-* Use HTML and CSS to create a user experience that allows users to comfortably navigate a site
+* Use Sinatra and ERB templates to render views to create, read, update, and delete resources using RESTful routes and appropriate HTTP verbs.
+* Use Sinatra and ERB templates to display a dashboard not related to a specific resource saved in the database.
+* Use HTML and CSS to create a user experience that allows users to comfortably navigate a site.
 
 ### Code Organization/Quality
 
-* Organize code using best practices (use POROs when appropriate, avoid long methods, etc.)
+* Organize code using best practices (use POROs when appropriate, avoid long methods, etc.).
 * Create methods using ActiveRecord on the appropriate class.
 
 ### Testing
@@ -92,14 +96,50 @@ Please TDD throughout. Tests are expected for all features and all models.
 
 ### Iteration 1
 
-Create full CRUD functionality for a station with the following characteristics:
+Create full CRUD functionality for a merchant with the following characteristics:
 
-* name
-* dock count
-* city
-* installation date
+* name - must be present
 
-Once you have the `Station` model started, finish it off by creating validations for the `Station` attributes.
+Once you have the `Merchant` model started, finish it off by creating validations for the `Merchant` attributes.
+
+You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/active_record_validations.html) to make sure no record is saved without having all attributes present.
+
+**Be sure to have a test for each individual validation.**
+
+At the end of this iteration, you should be able to view an index of all merchants, view a page for a single merchant, create a merchant, edit a merchant, and delete a merchant from either the index or the show pages
+
+### Iteration 2
+
+Seed Merchants from CSV.
+
+### Iteration 3
+
+Create full CRUD functionality for a category with the following characteristics:
+
+* name - must be present
+
+Once you have the `Category` model started, finish it off by creating validations for the `Category` attributes.
+
+You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/active_record_validations.html) to make sure no record is saved without having all attributes present.
+
+**Be sure to have a test for each individual validation.**
+
+At the end of this iteration, you should be able to view an index of all categories, view a page for a single category, create a category, edit a category, and delete a category from either the index or the show pages.
+
+### Iteration 4
+
+Create Seeds for Categories.
+
+### Iteration 5
+
+Create full CRUD functionality for an item with the following characteristics:
+
+* title
+* description
+* price
+* image
+
+Once you have the `Item` model started, finish it off by creating validations for the `Item` attributes.
 
 * All the attributes must be present.
 
@@ -107,131 +147,42 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all stations, view a page for a single station, create a station, edit a station, and delete a station from either the index or the show pages.
+At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from either the index or the show pages.
 
-### Iteration 2
-
-Download the dataset available [here](https://www.kaggle.com/benhamner/sf-bay-area-bike-share). This will include all of the CSV files that you will be using in this project. Since these files are large, we have set up your project directory structure and `.gitignore` so that when you add these files to the `/db/csv/` directory they will not be pushed up to GitHub. However, this also means that each of the members of your team will need to download these files independently. Please note that there are idiosyncracies in the data that are outlined in some detail [here](https://www.kaggle.com/benhamner/sf-bay-area-bike-share/discussion/23165). These may not be important to you at this moment, but this will be an important reference as you move through future iterations.
-
-Update the seeds file in your `/db` directory and add the `station.csv` file to your `/db/csv/` directory. When you run `rake db:seed` your development database should be populated with the information from the `station.csv` file. Your index should include a total of seventy stations.
-
-### Iteration 3
-
-Create a station dashboard route. When you visit `/station-dashboard` you should be shown a page with the following information:
-
-* Total count of stations
-* Average bikes available per station (based on docks).
-* Most bikes available at a station (based on docks).
-* Station(s) where the most bikes are available (based on docks).
-* Fewest bikes available at a station (based on docks).
-* Station(s) where the fewest bikes are available (based on docks).
-* Most recently installed station.
-* Oldest station.
-
-### Iteration 4
-
-Create full CRUD functionality for a trip with the following characteristics:
-
-* Duration
-* Start Date
-* Start Station
-* End Date
-* End Station
-* Bike ID
-* Subscription Type
-* Zip Code
-
-Note: Zip Code is a user-provided field, and may not be present on all records. Otherwise, as with `Station`'s, all attributes of a `Trip` need to be present to ensure data integrity. Don't forget your validations and tests for each validation.
-
-As with Iteration 1, be sure that you are working to normalize your database. This may mean using references to existing tables. At the end of this iteration users should be able to visit the following routes:
-
-* `/trips`
-* `/trips/:id`
-* `/trips/new`
-* `/trips/:id/edit`
-
-When a user visits the `/trips` path, they should only see the first thirty trips taken organized by date. On that page, there should also be a button to see the next thirty trips. Once a user visits a second page, there should be buttons to move both forward and backward in time.
-
-Additionally, users should be able to delete a trip from the views rendered at both `/trips/:id` and `/trips`.
-
-
-### Iteration 5
-
-Add the `trip.csv` file to your `db/csv` directory, and update your `seed.rb` file so that it also imports the information in `trip.csv`. Be sure to adjust your seed file so that when it is run it does not create duplicate data.
+- When creating an item, there should be a dropdown of all merchants and categories to select from.
 
 ### Iteration 6
 
-Create a trips dashbord route. When you visit `/trips-dashboard` users should be shown a page with the following information:
-
-* Average duration of a ride.
-* Longest ride.
-* Shortest ride.
-* Station with the most rides as a starting place.
-* Station with the most rides as an ending place.
-* Month by Month breakdown of number of rides with subtotals for each year.
-* Most ridden bike with total number of rides for that bike.
-* Least ridden bike with total number of rides for that bike.
-* User subscription type breakout with both count and percentage.
-* Single date with the highest number of trips with a count of those trips.
-* Single date with the lowest number of trips with a count of those trips.
-
-On an individual station show page add the following information:
-
-* Number of rides started at this station.
-* Number of rides ended at this station.
-* Most frequent destination station (for rides that began at this station).
-* Most freuqnet origination station (for rides that ended at this station).
-* Date with the highest number of trips started at this station.
-* Most frequent zip code for users starting trips at this station.
-* Bike ID most frequently starting a trip at this station.
+- Seed item csv.
 
 ### Iteration 7
 
-Create full CRUD functionality for a day's weather conditions with the following characteristics:
+Create a item dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
 
-* Date
-* Max Temperature
-* Mean Temperature
-* Min Temperature
-* Mean Humidity
-* Mean Visibility (in Miles)
-* Mean Wind Speed (mph)
-* Precipitation (inches)
-
-At the end of this iteration users should be able to visit the following routes:
-
-* `/conditions`
-* `/conditions/:id`
-* `/conditions/new`
-* `/conditions/:id/edit`
-
-As with `/trips`, users should only be shown the weather conditions for thirty days when they visit `/conditions` and should be able to navigate to other pages with forward/backward buttons.
-
-Additionally, users should be able to delete a the weather conditions for a particular date from the views rendered at both `/conditions/:id` and `/conditions`.
+* Total count of items
+* Average price per item.
+* Most recently created item.
+* Oldest item.
 
 ### Iteration 8
 
-Add the `weather.csv` file to your `db/csv` directory, and update your `seed.rb` file so that it also imports the information in `weather.csv`. Be sure to adjust your seed file so that when it is run it does not create duplicate data for a specific date. You can scope by a single zip code even though there are multiple zip codes in the data set. 
+Create a categories dashboard route. When you visit `/categories-dashboard` users should be shown a page with the following information:
+
+* Average price of item breakdown by each category.
+* Category with most expensive item.
+* Category with least expensive item.
+
 
 ### Iteration 9
 
-Create a weather dashboard available at `/weather-dashboard` that includes the following information:
+Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
-* Breakout of average number of rides, highest number of rides, and lowest number of rides on days with a high temperature in 10 degree chunks (e.g. average number of rides on days with high temps between fifty and sixty degrees)
-* Breakout of average number of rides, highest number of rides, and lowest number of rides on days with precipitation in half-inch increments.
-* Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean wind speeds in four mile increments.
-* Breakout of average number of rides, highest number of rides, and lowest number of rides on days with mean visibility in miles in four mile increments.
-
-Add the following information to your trip dashboard:
-
-* Weather on the day with the highest rides.
-* Weather on the day with the lowest rides.
+* Merchant with the most items and that items information.
+* Merchant with the highest priced item and that items information.
+* Breakdown of each merchant with total number of items and total price for all items.
 
 ## Extensions
 
 * Use [Google Charts](https://developers.google.com/chart/) to display information on one or more of your dashboards.
 * Read about [JSON](http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html). Create an endpoint at `api/v1/stations/:id` that responds to requests with JSON instead of HTML.
 * Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack)
-* Import minute by minute data for stations and use that data to create additional analytics.
-* Add latitude and longitude to your station table. Create a Google map with pins for each of the stations.
-
