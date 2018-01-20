@@ -13,8 +13,8 @@ In this project you'll use Ruby, Sinatra, and Activerecord to build a site that 
 ### ActiveRecord
 
 * Use ActiveRecord migrations to create a normalized database.
-* Use beginner/intermediate ActiveRecord queries to calculate and report on information in the database.
 * Utilize ActiveRecord methods and relationships to efficiently query the database.
+* Use beginner/intermediate ActiveRecord queries to calculate and report on information in the database.
 
 ### User Experience and Conventions
 
@@ -26,6 +26,7 @@ In this project you'll use Ruby, Sinatra, and Activerecord to build a site that 
 
 * Organize code using best practices (use POROs when appropriate, avoid long methods, etc.).
 * Create methods using ActiveRecord on the appropriate class.
+* No logic should live in the views.
 
 ### Testing
 
@@ -33,7 +34,7 @@ In this project you'll use Ruby, Sinatra, and Activerecord to build a site that 
 
 ### Working Collaboratively
 
-* Use Git and GitHub to work collaboratively, develop in smaller groups, and resolve merge conflicts
+* Use Git Merge Workflow and GitHub to work collaboratively, develop in smaller groups, and resolve merge conflicts
 
 ## Getting Started
 
@@ -94,7 +95,7 @@ At the end of this iteration, you should be able to view an index of all merchan
 
 ### Iteration 2
 
-Seed Merchants from [CSV](data/merchants.csv).
+Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run rake db:seed your development database, it should be populated with the information from the merchants.csv file. Your index should include a total of 475 merchants.
 
 ### Iteration 3
 
@@ -133,15 +134,15 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from either the index or the show pages.
 
-- When creating an item, there should be a dropdown of all merchants and categories to select from.
+- When creating an item, there should be a dropdown of all merchants and a dropdown of all categories to select from.
 
 ### Iteration 6
 
-- Seed Item [CSV](data/items.csv).
+Update the `seeds` file in your /db directory to parse the `items.csv`. When you run rake db:seed your development database, it should be populated with the information from the items.csv file.
 
 ### Iteration 7
 
-Create a item dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
+Create an item dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
 
 * Total count of items
 * Average price per item.
@@ -156,13 +157,12 @@ Create a categories dashboard route. When you visit `/categories-dashboard` user
 * Category with most expensive item.
 * Category with least expensive item.
 
-
 ### Iteration 9
 
 Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
-* Merchant with the most items and that items information.
-* Merchant with the highest priced item and that items information.
+* Merchant with the most items and that merchants information.
+* Merchant with the highest priced item and that merchants information.
 * Breakdown of each merchant with total number of items and total price for all items.
 
 ## Extensions
