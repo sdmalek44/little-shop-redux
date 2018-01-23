@@ -113,7 +113,7 @@ At the end of this iteration, you should be able to view an index of all categor
 
 ### Iteration 4
 
-Create Seeds for Categories.
+Create a CSV file for `categories.csv`. This file should have at least 3 categories in it. 
 
 ### Iteration 5
 
