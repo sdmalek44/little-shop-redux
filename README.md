@@ -95,7 +95,7 @@ At the end of this iteration, you should be able to view an index of all merchan
 
 ### Iteration 2
 
-Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run rake db:seed your development database, it should be populated with the information from the merchants.csv file. Your index should include a total of 475 merchants.
+Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run rake db:seed your development database should be populated with the information from the merchants.csv file. Your index should include a total of 475 merchants.
 
 ### Iteration 3
 
@@ -113,7 +113,7 @@ At the end of this iteration, you should be able to view an index of all categor
 
 ### Iteration 4
 
-Create a CSV file for `categories.csv`. This file should have at least 3 categories in it. 
+Create a CSV file for `categories.csv`. This file should have at least 3 categories in it. Use `categories.csv` to seed categories. Be sure to not duplicate data when seeding.
 
 ### Iteration 5
 
@@ -138,7 +138,7 @@ At the end of this iteration, you should be able to view an index of all items, 
 
 ### Iteration 6
 
-Update the `seeds` file in your /db directory to parse the `items.csv`. When you run rake db:seed your development database, it should be populated with the information from the items.csv file.
+Update the `seeds` file in your /db directory to parse the `items.csv`. When you run rake db:seed your development database should be populated with the information from the items.csv file. Be sure to not duplicate data when seeding.
 
 ### Iteration 7
 
@@ -161,8 +161,8 @@ Create a categories dashboard route. When you visit `/categories-dashboard` user
 
 Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
-* Merchant with the most items and that merchants information.
-* Merchant with the highest priced item and that merchants information.
+* Merchant with the most items and that merchant's information.
+* Merchant with the highest priced item and that merchant's information.
 * Breakdown of each merchant with total number of items and total price for all items.
 
 ## Extensions
