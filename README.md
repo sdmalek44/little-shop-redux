@@ -180,15 +180,15 @@ following criteria:
 
 ### 1. Feature Completeness
 
-* Exceeds Expectations: All features are correctly implemented along with two extensions and project is depoyed
-* Meets Expectations: All features defined in the assignment are correctly implemented and project is deployed
-* Below Expectations: There are one or two features missing or incorrectly implemented and/or project is not fully deployed
+* Exceeds Expectations: All features are correctly implemented along with two extensions 
+* Meets Expectations: All features defined in the assignment are correctly implemented 
+* Below Expectations: There are one or two features missing or incorrectly implemented 
 
 ### 2. Views
 
 * Exceeds Expectations: Views show logical refactoring into layout(s), partials and helpers, with no logic present
-* Meets Expectations: Views make use of layout(s), partials and helpers, but some logic leaks through
-* Below Expectations: Views don't make use of partials or show weak understanding of `render`
+* Meets Expectations: Views make use of layout(s)
+* Below Expectations: Views show weak understanding of `erb` and 'HTML'
 
 ### 3. Controller
 
@@ -198,15 +198,15 @@ following criteria:
 
 ### 4. Models
 
-* Exceeds Expectations: Models show excellent organization, refactoring, and appropriate use of Rails features
+* Exceeds Expectations: Models show excellent organization, refactoring, and appropriate use of ActiveRecord features
 * Meets Expectations: Models show an effort to push logic down the stack, but need more internal refactoring
-* Below Expectations: Models are somewhat messy and/or make poor use of Rails features
+* Below Expectations: Models are somewhat messy and/or make poor use of ActiveRecord features
 
 ### 5. Testing
 
-* Exceeds Expectations: Project has a running test suite that exercises the application at multiple levels
-* Meets Expectations: Project has a running test suite that tests at multiple levels but fails to cover some features
-* Below Expectations: Project has sporadic use of tests at multiple levels
+* Exceeds Expectations: Project has a running test suite that covers all functionality and exercises the application at multiple levels
+* Meets Expectations: Project has a running test suite that tests at multiple levels
+* Below Expectations: Project has sporadic use of tests 
 
 ### 6. Usability
 
