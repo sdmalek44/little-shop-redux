@@ -79,7 +79,7 @@ Please TDD throughout. Tests are expected for all features and all models.
 
 ## Base Expectations
 
-### Iteration 1
+### Iteration 1 - Merchants
 
 Create full CRUD functionality for a Merchant with the following characteristics:
 
@@ -93,29 +93,11 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 At the end of this iteration, you should be able to view an index of all merchants, view a page for a single merchant, create a merchant, edit a merchant, and delete a merchant from both the index and the show pages
 
-### Iteration 2
+### Iteration 2 - Seed Merchants
 
 Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run rake db:seed your development database should be populated with the information from the merchants.csv file. Your index should include a total of 475 merchants.
 
-### Iteration 3
-
-Create full CRUD functionality for a Category with the following characteristics:
-
-* name - must be present
-
-Once you have the `Category` model started, finish it off by creating validations for the `Category` attributes.
-
-You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/active_record_validations.html) to make sure no record is saved without having all attributes present.
-
-**Be sure to have a test for each individual validation.**
-
-At the end of this iteration, you should be able to view an index of all categories, view a page for a single category, create a category, edit a category, and delete a category from both the index and the show pages.
-
-### Iteration 4
-
-Create a CSV file for `categories.csv`. This file should have at least 3 categories in it. Use `categories.csv` to seed categories. Be sure to not duplicate data when seeding.
-
-### Iteration 5
+### Iteration 3 - Items
 
 Create full CRUD functionality for an Item with the following characteristics:
 
@@ -138,11 +120,50 @@ At the end of this iteration, you should be able to view an index of all items, 
 - You will want to utilize a default image for seeds. 
 - An image should be a string referencing a url to a photo.
 
-### Iteration 6
+### Iteration 4 - Seed Items
 
 Update the `seeds` file in your /db directory to parse the `items.csv`. When you run rake db:seed your development database should be populated with the information from the items.csv file. Be sure to not duplicate data when seeding.
 
-### Iteration 7
+### Iteration 5 - Invoices
+
+Create full CRUD functionality for an Invoice with the following characteristics:
+
+The following attributes must be present
+* merchant_id
+* status 
+
+Once you have the `Invoice` model started, finish it off by creating validations for the `Invoice` attributes.
+
+You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/active_record_validations.html) to make sure no record is saved without having all attributes present.
+
+**Be sure to have a test for each individual validation.**
+
+At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, create an invoice, edit an invoice, and delete an invoice from both the index and the show pages.
+
+### Iteration 6 - Seed Invoices
+
+Update the `seeds` file in your /db directory to parse the `invoices.csv`. When you run rake db:seed your development database should be populated with the information from the `invoices.csv` file. Your index should include a total of 4985 invoices.
+
+### Iteration 7 - Relating Items to Invoices
+
+Up until now, you've been working with one-to-many relationships. However, an invoice doesn't mean too much if you don't know which items are assoicated with it. 
+
+Build out an InvoiceItem model with the following attributes:
+* item_id
+* invoice_id
+* quantity
+* unit_price
+
+We don't want to see a view for this InvoiceItem joins table. However, we do want to see this information SOMEWHERE. Add the following functionality to the Invoice show.
+
+* For each item, list the quantity and unit_price
+* List the total price for the invoice
+
+### Iteration 8 - Seed Invoice Items
+
+Update the `seeds` file in your /db directory to parse the `invoice_items.csv`. When you run rake db:seed your development database should be populated with the information from the `invoice_items.csv` file. Your index should include a total of 21830 invoice_items.
+
+### Iteration 9 - Items Dashboard
 
 Create an item dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
 
@@ -151,21 +172,7 @@ Create an item dashboard route. When you visit `/items-dashboard` you should be 
 * Most recently created item.
 * Oldest item.
 
-### Iteration 8
-
-Create a categories dashboard route. When you visit `/categories-dashboard` users should be shown a page with the following information:
-
-Broken Down by Each Category:
-* Count of total items in the category
-* Average price of item in the category
-* Most recently created item in the category
-* Oldest item in the category
-
-For All Categories:
-* Category with most expensive item.
-* Category with least expensive item.
-
-### Iteration 9
+### Iteration 10 - Merchants Dashboard
 
 Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
@@ -181,7 +188,7 @@ Broken Down by Each Merchant
 
 * Use [Google Charts](https://developers.google.com/chart/) to display information on one or more of your dashboards.
 * Read about [JSON](http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html). Create an endpoint at `api/v1/items/:id` that responds to requests with JSON instead of HTML.
-* Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack)
+* Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack). You'll need to create fixtures of your data to meet the constraints of the free account on Heroku.
 
 ## Evaluation Process
 
