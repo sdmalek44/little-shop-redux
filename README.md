@@ -184,6 +184,16 @@ Broken Down by Each Merchant
 * Merchant with the most items and that merchant's information.
 * Merchant with the highest priced item and that merchant's information.
 
+### Iteration 11 - Invoices Dashboard
+
+Create a merchants dashboard route. When you visit `/invoices-dashboard` users should be shown a page with the following information:
+
+* Invoice statuses as a percent of total invoices
+* Invoice with the hightest associated unit_price
+* Invoice with the lowest associated unit_price
+* Invoice with the hightest assoicated quantity
+* Invoice with the lowest assoicated quantity
+
 ## Extensions
 
 * Use [Google Charts](https://developers.google.com/chart/) to display information on one or more of your dashboards.
