@@ -81,7 +81,7 @@ Please TDD throughout. Tests are expected for all features and all models.
 
 ### Iteration 1
 
-Create full CRUD functionality for a merchant with the following characteristics:
+Create full CRUD functionality for a Merchant with the following characteristics:
 
 * name - must be present
 
@@ -91,7 +91,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all merchants, view a page for a single merchant, create a merchant, edit a merchant, and delete a merchant from either the index or the show pages
+At the end of this iteration, you should be able to view an index of all merchants, view a page for a single merchant, create a merchant, edit a merchant, and delete a merchant from both the index and the show pages
 
 ### Iteration 2
 
@@ -99,7 +99,7 @@ Update the `seeds` file in your /db directory to parse the `merchants.csv`. When
 
 ### Iteration 3
 
-Create full CRUD functionality for a category with the following characteristics:
+Create full CRUD functionality for a Category with the following characteristics:
 
 * name - must be present
 
@@ -109,7 +109,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all categories, view a page for a single category, create a category, edit a category, and delete a category from either the index or the show pages.
+At the end of this iteration, you should be able to view an index of all categories, view a page for a single category, create a category, edit a category, and delete a category from both the index and the show pages.
 
 ### Iteration 4
 
@@ -117,7 +117,7 @@ Create a CSV file for `categories.csv`. This file should have at least 3 categor
 
 ### Iteration 5
 
-Create full CRUD functionality for an item with the following characteristics:
+Create full CRUD functionality for an Item with the following characteristics:
 
 * title
 * description
@@ -132,7 +132,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from either the index or the show pages.
+At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from both the index and the show pages.
 
 - When creating an item, there should be a dropdown of all merchants and a dropdown of all categories to select from.
 - You will want to utilize a default image for seeds. 
@@ -155,7 +155,13 @@ Create an item dashboard route. When you visit `/items-dashboard` you should be 
 
 Create a categories dashboard route. When you visit `/categories-dashboard` users should be shown a page with the following information:
 
-* Average price of item breakdown by each category.
+Broken Down by Each Category:
+* Count of total items in the category
+* Average price of item in the category
+* Most recently created item in the category
+* Oldest item in the category
+
+For All Categories:
 * Category with most expensive item.
 * Category with least expensive item.
 
@@ -163,9 +169,13 @@ Create a categories dashboard route. When you visit `/categories-dashboard` user
 
 Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
+Broken Down by Each Merchant
+* Total number of items for this merchant
+* Average price of item for this merchant
+* Total price for all items for this merchant
+
 * Merchant with the most items and that merchant's information.
 * Merchant with the highest priced item and that merchant's information.
-* Breakdown of each merchant with total number of items and total price for all items.
 
 ## Extensions
 
