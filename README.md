@@ -72,6 +72,16 @@ The project may not use:
 
 * `Rails`
 
+## Usability
+
+The application has been styled.
+The application uses a balanced, considered color scheme.
+The application implements a font (that is not the default font).
+The application utilizes a nav bar. 
+The style shows evidence of intentional layout. 
+Space and text is balanced. White space is used to visually separate content. 
+The application is easily usable. The user can intuitvely navigate between different portions of the application without manually entering the URL or using the back button on their browser.
+
 ## Instructions
 
 Iterations 0-9 must be completed in order to consider the project complete.
@@ -220,8 +230,8 @@ following criteria:
 ### 3. Controller
 
 * Exceeds Expectations: Controller show significant effort to push logic down the stack
-* Meets Expectations: Controller is generally well organized with three or fewer particularly ugly parts
-* Below Expectations: There are four to seven ugly controller methods that should have been refactored
+* Meets Expectations: Controller is generally well organized with three or fewer methods needing refactoring
+* Below Expectations: There are four to seven controller methods that should have been refactored
 
 ### 4. Models
 
@@ -231,19 +241,19 @@ following criteria:
 
 ### 5. Testing
 
-* Exceeds Expectations: Project has a running test suite that covers all functionality and exercises the application at multiple levels
+* Exceeds Expectations: Project has a running test suite that covers all functionality, exercises the application at multiple levels, and covers edge cases
 * Meets Expectations: Project has a running test suite that tests at multiple levels
 * Below Expectations: Project has sporadic use of tests 
 
 ### 6. Usability
 
 * Exceeds Expectations: Project is highly usable and ready to deploy to customers
-* Meets Expectations: Project is highly usable, but needs more polish before it'd be customer-ready
+* Meets Expectations: Project is usable, but needs more polish or navigation before it'd be customer-ready
 * Below Expectations: Project needs more attention to the User Experience, but works
 
 ### 7. Workflow
 
-* Exceeds Expectations: Excellent use of branches, pull requests, and a project management tool.
+* Exceeds Expectations: Excellent use of branches, pull requests, code review and a project management tool.
 * Meets Expectations: Good use of branches, pull requests, and a project-management tool.
 * Below Expectations: Sporadic use of branches, pull requests, and/or project-management tool.
 
