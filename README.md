@@ -239,19 +239,25 @@ following criteria:
 * Meets Expectations: Models show an effort to push logic down the stack, but need more internal refactoring
 * Below Expectations: Models are somewhat messy and/or make poor use of ActiveRecord features
 
-### 5. Testing
+### 5. ActiveRecord
+
+* Exceeds Expectations: Best choice ActiveRecord methods are used to solve each problem
+* Meets Expectations: ActiveRecord is utilized wherever it can be. There is no Ruby where there should be ActiveRecord
+* Below Expectations: Ruby is used to programatically solve problems where ActiveRecord could be used
+
+### 6. Testing
 
 * Exceeds Expectations: Project has a running test suite that covers all functionality, exercises the application at multiple levels, and covers edge cases
 * Meets Expectations: Project has a running test suite that tests at multiple levels
 * Below Expectations: Project has sporadic use of tests 
 
-### 6. Usability
+### 7. Usability
 
 * Exceeds Expectations: Project is highly usable and ready to deploy to customers
 * Meets Expectations: Project is usable, but needs more polish or navigation before it'd be customer-ready
 * Below Expectations: Project needs more attention to the User Experience, but works
 
-### 7. Workflow
+### 8. Workflow
 
 * Exceeds Expectations: Excellent use of branches, pull requests, code review and a project management tool.
 * Meets Expectations: Good use of branches, pull requests, and a project-management tool.
