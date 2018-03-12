@@ -175,12 +175,12 @@ Update the `seeds` file in your /db directory to parse the `invoice_items.csv`. 
 
 ### Iteration 9 - Items Dashboard
 
-Create an item dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
+Create an items dashboard route. When you visit `/items-dashboard` you should be shown a page with the following information:
 
 * Total count of items
-* Average price per item.
-* Most recently created item.
-* Oldest item.
+* Average price per item
+* Most recently created item
+* Oldest item
 
 ### Iteration 10 - Merchants Dashboard
 
@@ -191,17 +191,17 @@ Broken Down by Each Merchant
 * Total number of items for this merchant
 * Average price of item for this merchant
 * Total price for all items for this merchant
-* Merchant with the most items and that merchant's information.
-* Merchant with the highest priced item and that merchant's information.
+* Merchant with the most items and that merchant's information
+* Merchant with the highest priced item and that merchant's information
 
 ### Iteration 11 - Invoices Dashboard
 
-Create a merchants dashboard route. When you visit `/invoices-dashboard` users should be shown a page with the following information:
+Create a invoices dashboard route. When you visit `/invoices-dashboard` users should be shown a page with the following information:
 
-* Invoice statuses as a percent of total invoices
-* Invoice with the hightest associated unit_price
+* Each Invoice status as a percent of total invoices
+* Invoice with the highest associated unit_price
 * Invoice with the lowest associated unit_price
-* Invoice with the hightest assoicated quantity
+* Invoice with the highest assoicated quantity
 * Invoice with the lowest assoicated quantity
 
 ## Extensions
