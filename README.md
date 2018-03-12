@@ -136,7 +136,7 @@ Update the `seeds` file in your /db directory to parse the `items.csv`. When you
 
 ### Iteration 5 - Invoices
 
-Create full CRUD functionality for an Invoice with the following characteristics:
+Create full RUD functionality (No Create) for an Invoice with the following characteristics:
 
 The following attributes must be present
 * merchant_id
