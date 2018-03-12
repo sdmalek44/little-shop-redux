@@ -187,10 +187,10 @@ Create an item dashboard route. When you visit `/items-dashboard` you should be 
 Create a merchants dashboard route. When you visit `/merchants-dashboard` users should be shown a page with the following information:
 
 Broken Down by Each Merchant
+
 * Total number of items for this merchant
 * Average price of item for this merchant
 * Total price for all items for this merchant
-
 * Merchant with the most items and that merchant's information.
 * Merchant with the highest priced item and that merchant's information.
 
