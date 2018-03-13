@@ -20,7 +20,7 @@ In this project you'll use Ruby, Sinatra, and Activerecord to build a site that 
 
 * Use Sinatra and ERB templates to render views to create, read, update, and delete resources using RESTful routes and appropriate HTTP verbs.
 * Use Sinatra and ERB templates to display a dashboard not related to a specific resource saved in the database.
-* Use HTML and CSS to create a user experience that allows users to comfortably navigate a site.
+* Use HTML, CSS, and FlexBox to create a user experience that allows users to comfortably navigate a site.
 
 ### Code Organization/Quality
 
@@ -81,6 +81,7 @@ The application utilizes a nav bar.
 The style shows evidence of intentional layout. 
 Space and text is balanced. White space is used to visually separate content. 
 The application is easily usable. The user can intuitvely navigate between different portions of the application without manually entering the URL or using the back button on their browser.
+The application is minimally responsive.
 
 ## Instructions
 
