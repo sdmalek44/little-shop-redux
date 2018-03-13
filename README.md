@@ -86,7 +86,7 @@ The application follows the design laid out in [these wireframes](https://github
 
 ## Instructions
 
-Iterations 0-9 must be completed in order to consider the project complete.
+Iterations 1-11 must be completed in order to consider the project complete.
 Please TDD throughout. Tests are expected for all features and all models.
 
 ## Base Expectations
