@@ -75,13 +75,21 @@ The project may not use:
 ## Usability
 
 The application has been styled.
-The application uses a balanced, considered color scheme.
+
+The application uses a balanced, considered color scheme. 
+
 The application implements a font (that is not the default font).
+
 The application utilizes a nav bar. 
+
 The style shows evidence of intentional layout. 
+
 Space and text is balanced. White space is used to visually separate content. 
+
 The application is easily usable. The user can intuitvely navigate between different portions of the application without manually entering the URL or using the back button on their browser.
+
 The application is minimally responsive.
+
 The application follows the design laid out in [these wireframes](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module2/projects/Little%20Shop%20WireFrames.pdf).
 
 ## Instructions
