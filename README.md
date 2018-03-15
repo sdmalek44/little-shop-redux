@@ -150,7 +150,7 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, create an invoice, edit an invoice, and delete an invoice from both the index and the show pages.
+At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, edit an invoice, and delete an invoice from both the index and the show pages.
 
 ### Iteration 6 - Seed Invoices
 
