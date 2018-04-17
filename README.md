@@ -160,6 +160,9 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 At the end of this iteration, you should be able to view an index of all invoices, view a page for a single invoice, edit an invoice, and delete an invoice from both the index and the show pages.
 
+**Invoice Edit**
+Note users should not be able to edit the merchant associated with an invoice. This field should be disabled.
+
 ### Iteration 6 - Seed Invoices
 
 Update the `seeds` file in your /db directory to parse the `invoices.csv`. When you run rake db:seed your development database should be populated with the information from the `invoices.csv` file. Your index should include a total of 4985 invoices.
