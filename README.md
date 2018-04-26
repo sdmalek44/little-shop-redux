@@ -6,7 +6,7 @@ layout: page
 
 ## Abstract
 
-In this project you'll use Ruby, Sinatra, and Activerecord to build a site that shows items by categories and analyzes those items.
+In this project you'll use Ruby, Sinatra, and ActiveRecord to build a site that shows items by categories and analyzes those items.
 
 ## Learning Goals
 
@@ -40,7 +40,8 @@ In this project you'll use Ruby, Sinatra, and Activerecord to build a site that 
 
 ### Define the Relationship with Your Group
 
-DTR with your group [here](http://backend.turing.io/career_development_curriculum/module_one/dtr_guidelines_memo). One group member should send a link of the forked gist to your anchor as soon as it's complete.
+* DTR with your group [here](http://backend.turing.io/career_development_curriculum/module_one/dtr_guidelines_memo).
+* One group member should fork this gist and send their link to the instructors as soon as it's complete.
 
 ### Clone the Project
 
@@ -58,7 +59,7 @@ This project must use:
 
 This base repo has already configured those three for you.
 
-You'll want to set up the [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) gem in order to have a clean database each time you run tests. Follow the instructions for setting up the gem. Due to a bug in the most recent version of the gem, you'll need to use this line when you set the strategy in your test helper file:
+You'll want to set up the [DatabaseCleaner](https://github.com/DatabaseCleaner/database_cleaner) gem in order to have a clean database each time you run tests. Follow the instructions for setting up the gem. There MAY be a bug in the most recent version of the gem, so you may need to add the following line when you set the strategy in your test helper file:
 
 ```ruby
 DatabaseCleaner.strategy = :truncation
@@ -74,28 +75,20 @@ The project may not use:
 
 ## Usability
 
-The application has been styled.
-
-The application uses a balanced, considered color scheme. 
-
-The application implements a font (that is not the default font).
-
-The application utilizes a nav bar. 
-
-The style shows evidence of intentional layout. 
-
-Space and text is balanced. White space is used to visually separate content. 
-
-The application is easily usable. The user can intuitvely navigate between different portions of the application without manually entering the URL or using the back button on their browser.
-
-The application is minimally responsive.
-
-The application follows the design laid out in [these wireframes](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module2/projects/Little%20Shop%20WireFrames.pdf).
+- [ ] The application has been styled.
+- [ ] The application uses a balanced, considered color scheme.
+- [ ] The application implements a font (that is not the default font).
+- [ ] The application utilizes a nav bar.
+- [ ] The style shows evidence of intentional layout.
+- [ ] Space and text is balanced. White space is used to visually separate content.
+- [ ] The application is easily usable. The user can intuitively navigate between different portions of the application without manually entering the URL or using the back button on their browser.
+- [ ] The application is minimally responsive.
+- [ ] The application follows the design laid out in [these wireframes](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module2/projects/Little%20Shop%20WireFrames.pdf).
 
 ## Instructions
 
-Iterations 1-11 must be completed in order to consider the project complete.
-Please TDD throughout. Tests are expected for all features and all models.
+* Iterations 1-11 must be completed in order to consider the project complete.
+* Please TDD throughout. Tests are expected for all features and all models including model methods.
 
 ## Base Expectations
 
@@ -115,7 +108,7 @@ At the end of this iteration, you should be able to view an index of all merchan
 
 ### Iteration 2 - Seed Merchants
 
-Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run rake db:seed your development database should be populated with the information from the merchants.csv file. Your index should include a total of 475 merchants.
+Update the `seeds` file in your /db directory to parse the `merchants.csv`. When you run `rake db:seed` your development database should be populated with the information from the `merchants.csv` file. Your index should include a total of 475 merchants.
 
 ### Iteration 3 - Items
 
@@ -134,23 +127,30 @@ You can use ActiveRecord's [validations feature](http://guides.rubyonrails.org/a
 
 **Be sure to have a test for each individual validation.**
 
-At the end of this iteration, you should be able to view an index of all items, view a page for a single item, create an item, edit an item, and delete an item from both the index and the show pages.
+At the end of this iteration, you should be able to:
+
+- [ ] view an index of all items
+- [ ] view a page for a single item
+- [ ] create an item
+- [ ] edit an item
+- [ ] delete an item from both the index and the show pages.
 
 - When creating an item, there should be a dropdown of all merchants to select from.
-- You will want to utilize a default image for seeds. 
+- You will want to utilize a default image for seeded data.
 - An image should be a string referencing a url to a photo.
 
 ### Iteration 4 - Seed Items
 
-Update the `seeds` file in your /db directory to parse the `items.csv`. When you run rake db:seed your development database should be populated with the information from the items.csv file. Be sure to not duplicate data when seeding.
+Update the `seeds` file in your `/db` directory to parse the `items.csv`. When you run `rake db:seed` your development database should be populated with the information from the `items.csv` file. Be sure to not duplicate data when seeding.
 
 ### Iteration 5 - Invoices
 
-Create full RUD functionality (No Create) for an Invoice with the following characteristics:
+Create full "RUD" functionality (no Create is needed) for an Invoice with the following characteristics:
 
-The following attributes must be present
+The following attributes must be present:
+
 * merchant_id
-* status 
+* status
 
 Once you have the `Invoice` model started, finish it off by creating validations for the `Invoice` attributes.
 
@@ -165,13 +165,14 @@ Note users should not be able to edit the merchant associated with an invoice. T
 
 ### Iteration 6 - Seed Invoices
 
-Update the `seeds` file in your /db directory to parse the `invoices.csv`. When you run rake db:seed your development database should be populated with the information from the `invoices.csv` file. Your index should include a total of 4985 invoices.
+Update the `seeds` file in your `/db` directory to parse the `invoices.csv`. When you run `rake db:seed` your development database should be populated with the information from the `invoices.csv` file. Your index should include a total of 4985 invoices.
 
 ### Iteration 7 - Relating Items to Invoices
 
-Up until now, you've been working with one-to-many relationships. However, an invoice doesn't mean too much if you don't know which items are assoicated with it. 
+Up until now, you've been working with one-to-many relationships. However, an invoice doesn't mean too much by itself if you don't know which items are associated with it.
 
 Build out an InvoiceItem model with the following attributes:
+
 * item_id
 * invoice_id
 * quantity
@@ -184,7 +185,7 @@ We don't want to see a view for this InvoiceItem joins table. However, we do wan
 
 ### Iteration 8 - Seed Invoice Items
 
-Update the `seeds` file in your /db directory to parse the `invoice_items.csv`. When you run rake db:seed your development database should be populated with the information from the `invoice_items.csv` file. Your index should include a total of 21830 invoice_items.
+Update the `seeds` file in your `/db` directory to parse the `invoice_items.csv`. When you run `rake db:seed` your development database should be populated with the information from the `invoice_items.csv` file. Your index should include a total of 21830 invoice_items.
 
 ### Iteration 9 - Items Dashboard
 
@@ -214,25 +215,24 @@ Create a invoices dashboard route. When you visit `/invoices-dashboard` users sh
 * Each Invoice status as a percent of total invoices
 * Invoice with the highest associated unit_price
 * Invoice with the lowest associated unit_price
-* Invoice with the highest assoicated quantity
-* Invoice with the lowest assoicated quantity
+* Invoice with the highest associated quantity
+* Invoice with the lowest associated quantity
 
 ## Extensions
 
 * Use [Google Charts](https://developers.google.com/chart/) to display information on one or more of your dashboards.
 * Read about [JSON](http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html). Create an endpoint at `api/v1/items/:id` that responds to requests with JSON instead of HTML.
-* Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack). You'll need to create fixtures of your data to meet the constraints of the free account on Heroku.
+* Deploy your application to [Heroku](https://devcenter.heroku.com/articles/rack). You'll need to create fixtures of only **some** of your data to meet the constraints of the free account on Heroku. (Heroku only allows 10,000 total rows of data, so you'll need to pick only a certain amount of data to populate on Heroku)
 
 ## Evaluation Process
 
-For the evaluation we'll work through the expectations above and look at the
-following criteria:
+For the evaluation we'll work through the expectations above and look at the following criteria:
 
 ### 1. Feature Completeness
 
-* Exceeds Expectations: All features are correctly implemented along with two extensions 
-* Meets Expectations: All features defined in the assignment are correctly implemented 
-* Below Expectations: There are one or two features missing or incorrectly implemented 
+* Exceeds Expectations: All features are correctly implemented along with two extensions
+* Meets Expectations: All features defined in the assignment are correctly implemented
+* Below Expectations: There are one or two features missing or incorrectly implemented
 
 ### 2. Views
 
@@ -256,13 +256,13 @@ following criteria:
 
 * Exceeds Expectations: Best choice ActiveRecord methods are used to solve each problem
 * Meets Expectations: ActiveRecord is utilized wherever it can be. There is no Ruby where there should be ActiveRecord
-* Below Expectations: Ruby is used to programatically solve problems where ActiveRecord could be used
+* Below Expectations: Ruby is used to programmatically solve problems where ActiveRecord could be used
 
 ### 6. Testing
 
 * Exceeds Expectations: Project has a running test suite that covers all functionality, exercises the application at multiple levels, and covers edge cases
 * Meets Expectations: Project has a running test suite that tests at multiple levels
-* Below Expectations: Project has sporadic use of tests 
+* Below Expectations: Project has sporadic use of tests
 
 ### 7. Usability
 
@@ -275,4 +275,3 @@ following criteria:
 * Exceeds Expectations: Excellent use of branches, pull requests, code review and a project management tool.
 * Meets Expectations: Good use of branches, pull requests, and a project-management tool.
 * Below Expectations: Sporadic use of branches, pull requests, and/or project-management tool.
-
