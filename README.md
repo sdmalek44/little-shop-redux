@@ -67,6 +67,23 @@ DatabaseCleaner.strategy = :truncation
 
 See the "Resources" section at the bottom of this page for additional helpful documentation.
 
+Note - when running shotgun to start your local server, this error may pop up.
+
+```
+== Shotgun/WEBrick on http://127.0.0.1:8999/
+objc[89654]: +[__NSPlaceholderDictionary initialize] may have been in progress in another thread when fork() was called.
+objc[89654]: +[__NSPlaceholderDictionary initialize] may have been in progress in another thread when fork() was called. We cannot safely call it or ignore it in the fork() child process. Crashing instead. Set a breakpoint on objc_initializeAfterForkError to debug.
+[2017-10-04 13:36:39] ERROR EOFError: end of file reached
+```
+
+If you get this error, this can be fixed using this code in the terminal session you are running
+
+```
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+```
+
+This line of code will work for the current terminal session, but after you close that terminal session it will no longer be in effect and will need to be re-input every new terminal session that is started. This error is due to a bug in the interaction of High Sierra (Mac OS) and the shotgun gem.
+
 ### Restrictions
 
 The project may not use:
