@@ -40,7 +40,7 @@ In this project you'll use Ruby, Sinatra, and ActiveRecord to build a site that 
 
 ### Define the Relationship with Your Group
 
-* DTR with your group [here](http://backend.turing.io/career_development_curriculum/module_one/dtr_guidelines_memo).
+* DTR with your group [here](https://github.com/turingschool/career-development-curriculum/blob/master/module_one/dtr_guidelines_memo.md).
 * One group member should fork this gist and send their link to the instructors as soon as it's complete.
 
 ### Clone the Project
