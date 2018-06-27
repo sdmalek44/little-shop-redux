@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>merchants</title>
+  </head>
+  <body>
+    <% if @merchants%>
+      <% @merchants.each do |merchant| %>
+      <ul>
+        <li>id: <%= merchant.id %></li>
+        <li>name: <%= merchant.name %></li>
+        <li>created_at: <%= merchant.created_at %></li>
+        <li>updated_at: <%= merchant.updated_at %></li>
+      </ul>
+      <% end %>
+    <% end %>
+  </body>
+</html>
