@@ -3,11 +3,16 @@
     <title>merchants</title>
   </head>
   <body>
+    <h1>Merchants</h1>
+    <div>
+      <a href="/merchants/new" class="new-merchant"><button class="new-merchant">Create a new Merchant</button></a>
+    </div>
+
     <% if @merchants%>
       <% @merchants.each do |merchant| %>
-      <ul>
+      <ul class="merchant-data">
         <li>id: <%= merchant.id %></li>
-        <li>name: <%= merchant.name %></li>
+        <li class='merchant-name'>name: <%= merchant.name %></li>
         <li>created_at: <%= merchant.created_at %></li>
         <li>updated_at: <%= merchant.updated_at %></li>
       </ul>
