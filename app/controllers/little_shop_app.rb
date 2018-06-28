@@ -38,4 +38,8 @@ class LittleShopApp < Sinatra::Base
     Merchant.delete(params[:id])
     redirect '/merchants'
   end
+
+  get '/items' do
+    erb :'items/index'
+  end
 end
