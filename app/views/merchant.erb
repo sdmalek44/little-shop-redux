@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>merchants</title>
+  </head>
+  <body>
+    <% if @merchant%>
+      <ul>
+        <li>id: <%= @merchant.id %></li>
+        <li>name: <%= @merchant.name %></li>
+        <li>created_at: <%= @merchant.created_at %></li>
+        <li>updated_at: <%= @merchant.updated_at %></li>
+      </ul>
+      <form action="/merchants/<%= @merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    <% end %>
+  </body>
+</html>
