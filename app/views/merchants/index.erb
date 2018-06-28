@@ -10,12 +10,7 @@
 
     <% if @merchants%>
       <% @merchants.each do |merchant| %>
-      <ul id='merchant-<%= merchant.id %>'>
-        <li id='id-<%= merchant.id %>'>id: <%= merchant.id %></li>
-        <li id='name-<%= merchant.id %>'>name: <%= merchant.name %></li>
-        <li id='created_at-<%= merchant.id %>'>created_at: <%= merchant.created_at %></li>
-        <li id='updated_at-<%= merchant.id %>'>updated_at: <%= merchant.updated_at %></li>
-      </ul>
+      <a href="/merchants/<%= merchant.id %>" id='name-<%= merchant.id %>'><%= merchant.name %></a>
       <form action="/merchants/<%=merchant.id%>/edit" method="get">
         <input id="edit-<%= merchant.id %>" type="submit"  value="edit">
       </form>

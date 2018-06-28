@@ -19,7 +19,7 @@ RSpec.describe Merchant do
         expect(current_path).to eq('/merchants')
 
         within('#name-1') do
-          expect(page).to have_content('name: example Merchant name')
+          expect(page).to have_content('example Merchant name')
         end
       end
       it 'user can edit a merchant' do
@@ -35,7 +35,7 @@ RSpec.describe Merchant do
         expect(current_path).to eq('/merchants')
 
         within('#name-1') do
-          expect(page).to have_content('name: a different merchant name')
+          expect(page).to have_content('a different merchant name')
         end
       end
       it 'user can delete a merchant' do
