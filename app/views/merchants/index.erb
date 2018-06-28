@@ -10,16 +10,16 @@
 
     <% if @merchants%>
       <% @merchants.each do |merchant| %>
-      <ul class="merchant-data">
+      <ul id='merchant-<%= merchant.id %>'>
         <li id='id-<%= merchant.id %>'>id: <%= merchant.id %></li>
         <li id='name-<%= merchant.id %>'>name: <%= merchant.name %></li>
         <li id='created_at-<%= merchant.id %>'>created_at: <%= merchant.created_at %></li>
         <li id='updated_at-<%= merchant.id %>'>updated_at: <%= merchant.updated_at %></li>
       </ul>
       <form action="/merchants/<%=merchant.id%>/edit" method="get">
-        <input type="submit"  value="edit">
+        <input id="edit-<%= merchant.id %>" type="submit"  value="edit">
       </form>
-      <form action="/merchants/<%= merchant.id %>" method="POST">
+      <form id="delete-<%= merchant.id %>" action="/merchants/<%= merchant.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="delete"/>
       </form>

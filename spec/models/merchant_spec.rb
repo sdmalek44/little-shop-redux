@@ -38,6 +38,19 @@ RSpec.describe Merchant do
           expect(page).to have_content('name: a different merchant name')
         end
       end
+      it 'user can delete a merchant' do
+        merchant1 = Merchant.create(name: 'Steve')
+        merchant2 = Merchant.create(name: 'Seth')
+        merchant3 = Merchant.create(name: 'Andrew')
+
+        visit '/merchants'
+
+        within('#delete-3') do
+          click_button('delete')
+        end
+
+        expect(page).not_to have_content('name: Andrew')
+      end
     end
   end
 end

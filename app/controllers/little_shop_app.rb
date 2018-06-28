@@ -2,16 +2,16 @@ class LittleShopApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
-    erb :merchants
+    redirect '/merchants'
   end
 
   get '/merchants' do
     @merchants = Merchant.all
-    erb :merchants
+    erb :'merchants/index'
   end
 
   get '/merchants/new' do
-    erb :new
+    erb :'merchants/new'
   end
 
   post '/merchants' do
@@ -21,7 +21,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants/:id/edit' do
     @merchant = Merchant.find(params[:id])
-    erb :edit
+    erb :'merchants/edit'
   end
 
   patch '/merchants/:id' do |id|
@@ -31,7 +31,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/merchants/:id' do
     @merchant = Merchant.find(params[:id])
-    erb :merchant
+    erb :'merchants/show'
   end
 
   delete '/merchants/:id' do
