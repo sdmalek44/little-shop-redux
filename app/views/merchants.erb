@@ -11,8 +11,12 @@
         <li>created_at: <%= merchant.created_at %></li>
         <li>updated_at: <%= merchant.updated_at %></li>
       </ul>
-      <form class="new_merchant" action="/merchants/<%=merchant.id%>/edit" method="get">
+      <form action="/merchants/<%=merchant.id%>/edit" method="get">
         <input type="submit"  value="edit">
+      </form>
+      <form action="/merchants/<%= merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
       </form>
       <% end %>
     <% end %>
