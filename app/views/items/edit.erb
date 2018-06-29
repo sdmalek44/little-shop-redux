@@ -5,6 +5,7 @@
   <body>
     <form action="/items/<%= @item.id %>" method="post">
       <input type="hidden" name="_method" value="PATCH">
+      <input type="text" name="item[merchant_id]" value="<%= @item.title %>">
       <input type="text" name="item[title]" value="<%= @item.title %>">
       <input type="text" name="item[description]" value="<%= @item.description %>">
       <input type="text" name="item[price]" value="<%= @item.money %>">
