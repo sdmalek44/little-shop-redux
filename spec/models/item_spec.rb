@@ -26,7 +26,7 @@ RSpec.describe Item do
       it 'user can create a new item' do
         visit '/items'
 
-        click_link('Create a new Item')
+        click_link('Create')
         expect(current_path).to eq('/items/new')
 
         fill_in('item[title]', with: 'puzzle')
