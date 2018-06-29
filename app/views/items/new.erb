@@ -5,7 +5,10 @@
   <body>
     <form action="/items" method="post">
       <input type="text" name="item[title]">
-      <input type="submit" value="Submit">
+      <textarea name="item[description]"></textarea>
+      <input type="number" name="item[price]">
+      <input type="url" name="item[image]">
+      <input type="submit" value="Create Item">
     </form>
   </body>
 </html>
