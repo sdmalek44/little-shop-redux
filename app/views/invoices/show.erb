@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Invoices</title>
+  </head>
+  <body>
+    <% if @invoice%>
+      <h4>ID: <%= @invoice.id %></h4>
+      <h4>Status: <%= @invoice.status %></h4>
+      <form action="/invoices/<%= @invoice.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    <% end %>
+  </body>
+</html>
