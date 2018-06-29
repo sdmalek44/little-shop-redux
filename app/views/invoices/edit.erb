@@ -1,0 +1,5 @@
+<form action="/invoices/<%= @invoice.id %>" method="post">
+  <input type="hidden" name="_method" value="PATCH">
+  <input type="text" name="invoice[status]" value=" <%= @invoice.status %>">
+  <input type="submit" value="Edit">
+</form>

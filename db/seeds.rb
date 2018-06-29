@@ -11,3 +11,4 @@ def create_seeds(file_path, model)
 end
 
 puts create_seeds('./data/merchants.csv', Merchant)
+puts create_seeds('./data/invoices.csv', Invoice)
