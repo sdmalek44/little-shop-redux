@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Item</title>
+  </head>
+  <body>
+    <h1>Item</h1>
+    <a href="/items/<%= @item.id %>/edit"><button>edit</button></a>
+    <form action="/items/<%= @item.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete">
+    </form>
+    <ul>
+      <li><%= @item.title %></li>
+      <li><%= @item.description %></li>
+      <li><%= "$#{@item.money}" %></li>
+      <li><img src="<%= @item.image %>"></li>
+    </ul>
+  </body>
+</html>

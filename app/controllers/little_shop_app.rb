@@ -52,20 +52,21 @@ class LittleShopApp < Sinatra::Base
     Item.create(params[:item])
     redirect '/items'
   end
-
-  get '/items/:id/edit' do
-    @items = Item.find(params[:id])
-    erb :'items/edit'
-  end
-
-  patch '/items/:id' do |id|
-    Item.update(id.to_i, params[:item])
-    redirect '/items'
-  end
-
+  
   get '/items/:id' do
     @item = Item.find(params[:id])
     erb :'items/show'
+  end
+
+  get '/items/:id/edit' do
+    @item = Item.find(params[:id])
+    erb :'items/edit'
+  end
+
+  patch '/items/:id' do
+    new_params = Item.convert_params(params)
+    Item.update(new_params[:item])
+    redirect "/items/#{params[:id]}"
   end
 
   delete '/items/:id' do
