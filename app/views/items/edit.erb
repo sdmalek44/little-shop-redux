@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>Items</title>
+  </head>
+  <body>
+    <form action="/items/<%= @item.id %>" method="post">
+      <input type="hidden" name="_method" value="PATCH">
+      <input type="text" name="item[title]" value="<%= @item.title %>">
+      <input type="text" name="item[description]" value="<%= @item.description %>">
+      <input type="text" name="item[price]" value="<%= @item.money %>">
+      <input type="text" name="item[image]" value="<%= @item.image %>">
+      <input type="submit" value="edit">
+  </body>
+</html>
