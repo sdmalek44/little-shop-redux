@@ -4,5 +4,21 @@
   </head>
   <body>
     <h1>Items</h1>
+    <div>
+      <a href="/items/new" class="new-item"><button class="new-item">Create</button></a>
+    </div>
+
+    <% if @items%>
+      <% @items.each do |item| %>
+      <a href="/items/<%= item.id %>" id='title-<%= item.id %>'><%= item.title %></a>
+      <form action="/items/<%= item.id %>/edit" method="get">
+        <input id="edit-<%= edit.id %>" type="submit" value="edit">
+      </form>
+      <form id="delete-<%= item.id %>" action="/items/<%= item.id %>" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <input type="submit" value="delete"/>
+      </form>
+      <% end %>
+    <% end %>
   </body>
 </html>

@@ -21,4 +21,21 @@ RSpec.describe Item do
     expect(item).to_not be_valid
     end
   end
+  describe 'Features'
+    context 'when visiting /items' do
+      it 'user can create a new item' do
+        visit '/items'
+
+        click_link('Create a new Item')
+        expect(current_path).to eq('/items/new')
+
+        fill_in('item[title]', with: 'puzzle')
+        click_on('Submit')
+        expect(current_path).to eq('/items')
+
+        within('#title-1') do
+          expect(page).to have_content('puzzle')
+        end
+      end
+    end
 end
