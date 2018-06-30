@@ -6,7 +6,7 @@
     <form action="/items/<%= @item.id %>" method="post">
       <input type="hidden" name="_method" value="PATCH">
       <p>merchant: <p>
-      <input type="text" name="merchant[name]" value="<%= @item.merchant.name %>">
+      <input type="text" name="merchant[name]" value="<%= @item.merchant.name if @item.merchant %>">
       <p>title: <p>
       <input type="text" name="item[title]" value="<%= @item.title %>">
       <p>description: <p>
