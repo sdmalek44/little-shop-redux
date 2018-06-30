@@ -4,7 +4,9 @@
   </head>
   <body>
     <h1>Item</h1>
-    <a href="/items/<%= @item.id %>/edit"><button>edit</button></a>
+    <form action="/items/<%= @item.id %>/edit" method="get">
+      <input type="submit" value="edit">
+    </form>
     <form action="/items/<%= @item.id %>" method="post">
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="delete">
