@@ -74,7 +74,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/items' do
-    Item.create(params[:item])
+    new_params = Item.convert_params(params)
+    Item.create(new_params[:item])
     redirect '/items'
   end
 

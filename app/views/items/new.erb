@@ -3,11 +3,18 @@
     <title>New Item</title>
   </head>
   <body>
+    <h1>Create New Item</h1>
     <form action="/items" method="post">
+      <p>merchant:</p>
+      <input type="text" name="merchant[name]"/>
+      <p>title:</p>
       <input type="text" name="item[title]">
+      <p>description:</p>
       <textarea name="item[description]"></textarea>
-      <input type="number" name="item[price]">
-      <input type="url" name="item[image]">
+      <p>price:</p>
+      <input type="text" name="item[price]">
+      <p>image:</p>
+      <input type="url" name="item[image]"/><br>
       <input type="submit" value="Create Item">
     </form>
   </body>

@@ -1,4 +1,5 @@
 class Item < ActiveRecord::Base
+  belongs_to :merchant
   validates_presence_of :title, :description, :price, :image
 
   def money
@@ -7,6 +8,7 @@ class Item < ActiveRecord::Base
 
   def self.convert_params(item_params)
     item_params[:item][:price] = (item_params[:item][:price].to_f * 100).to_i
+    item_params[:item][:merchant_id] = Merchant.find_or_create_by(name: item_params[:merchant][:name]).id
     item_params
   end
 end
