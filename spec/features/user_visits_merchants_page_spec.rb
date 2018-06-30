@@ -45,5 +45,17 @@ RSpec.describe Merchant do
         expect(page).not_to have_content('name: Andrew')
       end
     end
+    context 'when visiting /merchants/:id' do
+      it 'will see a list of items for merchant' do
+        merchant = Merchant.create(name: 'Seth')
+        item1 = Item.create(merchant_id: merchant.id, title: "puzzle", description: "blah", price: 1000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk")
+        item2 = Item.create(merchant_id: merchant.id, title: "basketball", description: "foo", price: 100, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk")
+
+        visit "/merchants/#{merchant.id}"
+
+        expect(page).to have_content("#{item1.title}", "$10.0")
+        expect(page).to have_content("#{item2.title}", "$1.0")
+      end
+    end
   end
 end
