@@ -5,11 +5,15 @@
   <body>
     <% if @merchant%>
       <ul>
-        <li>id: <%= @merchant.id %></li>
-        <li>name: <%= @merchant.name %></li>
-        <li>created_at: <%= @merchant.created_at %></li>
-        <li>updated_at: <%= @merchant.updated_at %></li>
-      </ul>
+        <p>name: <%= @merchant.name %></p>
+        <p>items: <% @merchant.items.each do |item| %>
+                      <ul>
+                        <li><a href="/items/<%= item.id %>"><%= item.title %></a></li>
+                        <li>$<%= item.money %></li>
+                        <li><img src="<%= item.image %>" alt="dog"></li>
+                      </ul>
+                  <% end %>
+      </p>
       <form action="/merchants/<%= @merchant.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="delete"/>

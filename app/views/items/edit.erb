@@ -5,10 +5,15 @@
   <body>
     <form action="/items/<%= @item.id %>" method="post">
       <input type="hidden" name="_method" value="PATCH">
-      <input type="text" name="item[merchant_id]" value="<%= @item.title %>">
+      <p>merchant: <p>
+      <input type="text" name="merchant[name]" value="<%= @item.merchant.name %>">
+      <p>title: <p>
       <input type="text" name="item[title]" value="<%= @item.title %>">
+      <p>description: <p>
       <input type="text" name="item[description]" value="<%= @item.description %>">
+      <p>price: <p>
       <input type="text" name="item[price]" value="<%= @item.money %>">
+      <p>image: <p>
       <input type="text" name="item[image]" value="<%= @item.image %>">
       <input type="submit" value="edit">
   </body>
