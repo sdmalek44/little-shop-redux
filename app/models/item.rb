@@ -11,4 +11,8 @@ class Item < ActiveRecord::Base
     item_params[:item][:merchant_id] = Merchant.find_or_create_by(name: item_params[:merchant][:name]).id
     item_params
   end
+
+  def self.merchant_with_highest_item_price
+    all.order(:price).last.merchant
+  end
 end
