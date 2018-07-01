@@ -2,6 +2,7 @@ require 'csv'
 require './app/models/merchant.rb'
 require './app/models/invoice.rb'
 require './app/models/item.rb'
+require './app/models/invoice_item.rb'
 
 def create_seeds(file_path, model)
   opened = CSV.open file_path, headers: true, header_converters: :symbol
@@ -24,3 +25,4 @@ end
 puts create_seeds('./data/merchants.csv', Merchant)
 puts create_seeds('./data/invoices.csv', Invoice)
 puts create_seeds('./data/items.csv', Item)
+puts create_seeds('./data/invoice_items.csv', InvoiceItem)
