@@ -3,13 +3,27 @@
     <title>Invoices</title>
   </head>
   <body>
-    <% if @invoice%>
+    <% if @invoice %>
       <h4>ID: <%= @invoice.id %></h4>
       <h4>Status: <%= @invoice.status %></h4>
+      <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
+        <input type="submit" value="Edit"/>
+      </form>
       <form action="/invoices/<%= @invoice.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
+        <input type="submit" value="Delete"/>
       </form>
+      <% if @invoice.merchant %>
+      <a href="/merchants/<%= @invoice.merchant.id %>"><%= @invoice.merchant_name %></a>
+      <% end %>
+      <% @invoice.invoice_items.each do |invoice_item| %>
+      <ul>
+        <li><a href="/items/<%= invoice_item.item_id %>"> <%= invoice_item.item_id %></a></>
+        <li> <%= invoice_item.item_title %></li>
+        <li> <%= invoice_item.quantity %></li>
+        <li> <%= invoice_item.money %></li>
+      </ul>
+      <% end %>
     <% end %>
   </body>
 </html>

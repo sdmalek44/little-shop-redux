@@ -1,5 +1,9 @@
 <form action="/invoices/<%= @invoice.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
+  <input type="text" name="merchant[name]" value=" <%= @invoice.merchant_name %>">
   <input type="text" name="invoice[status]" value=" <%= @invoice.status %>">
-  <input type="submit" value="Edit">
+  <input type="submit" value="Update Invoice">
+</form>
+<form action="/invoices/<%= @invoice.id %>" method="GET">
+  <input type="submit" value="Cancel">
 </form>
