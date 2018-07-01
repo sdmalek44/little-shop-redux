@@ -13,4 +13,8 @@ class Merchant < ActiveRecord::Base
   def items_total_cost
     (items.sum(:price).to_f / 100.0).round(2)
   end
+
+  def self.most_items
+    all.max_by { |merchant| merchant.item_count }
+  end
 end

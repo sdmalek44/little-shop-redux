@@ -4,12 +4,13 @@
   </head>
   <body>
     <h1>Merchants Dashboard</h1>
-    <p> <%= 'merchant with most items' %></p>
+    <div>Merchant With Most Items: <a href="/merchants/<%= @most_items.id %>"><%= @most_items.name %></a></div>
+    <div>Merchant With Highest Item Price: <a href="/merchants/<%= @highest_price.id %>"><%= @highest_price.name %></a></div>
     <% @merchants.each do |merchant|%>
-    <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-    <li>Item Count: <%= merchant.item_count %></li>
-    <li>Avg Item Price: $<%= merchant.avg_item_price %></li>
-    <li>Total Cost Of Items: $<%= merchant.items_total_cost %></li>
+      <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
+      <li>Item Count: <%= merchant.item_count %></li>
+      <li>Avg Item Price: $<%= merchant.avg_item_price %></li>
+      <li>Total Cost Of Items: $<%= merchant.items_total_cost %></li>
     <% end %>
   </body>
 </html>
