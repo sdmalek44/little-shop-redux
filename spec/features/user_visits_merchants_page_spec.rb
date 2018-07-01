@@ -25,11 +25,9 @@ RSpec.describe Merchant do
 
         fill_in('merchant[name]', with: 'a different merchant name')
         click_on('Edit')
-        expect(current_path).to eq('/merchants')
+        expect(current_path).to eq("/merchants/#{merchant.id}")
 
-        within('#name-1') do
-          expect(page).to have_content('a different merchant name')
-        end
+        expect(page).to have_content('a different merchant name')
       end
       it 'user can delete a merchant' do
         merchant1 = Merchant.create(name: 'Steve')

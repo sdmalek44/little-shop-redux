@@ -12,6 +12,7 @@
     <% if @invoice %>
       <h4>ID: <%= @invoice.id %></h4>
       <h4>Status: <%= @invoice.status %></h4>
+      <h4>Total Price: $<%= @invoice.total_price %> </h4>
       <form action="/invoices/<%= @invoice.id %>/edit" method="GET">
         <input type="submit" value="Edit"/>
       </form>
@@ -25,9 +26,9 @@
       <% @invoice.invoice_items.each do |invoice_item| %>
       <ul>
         <li><a href="/items/<%= invoice_item.item_id %>"> <%= invoice_item.item_id %></a>
-        <li> <%= invoice_item.item_title %></li>
-        <li> <%= invoice_item.quantity %></li>
-        <li> <%= invoice_item.money %></li>
+        <li>Item Title: <%= invoice_item.item_title %></li>
+        <li>Quantity: <%= invoice_item.quantity %></li>
+        <li>Unit Price: <%= invoice_item.money %></li>
       </ul>
       <% end %>
     <% end %>
