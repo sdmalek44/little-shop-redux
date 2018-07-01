@@ -18,7 +18,7 @@
       <% end %>
       <% @invoice.invoice_items.each do |invoice_item| %>
       <ul>
-        <li><a href="/items/<%= invoice_item.item_id %>"> <%= invoice_item.item_id %></a></>
+        <li><a href="/items/<%= invoice_item.item_id %>"> <%= invoice_item.item_id %></a>
         <li> <%= invoice_item.item_title %></li>
         <li> <%= invoice_item.quantity %></li>
         <li> <%= invoice_item.money %></li>
