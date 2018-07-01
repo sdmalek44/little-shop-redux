@@ -2,7 +2,7 @@ class LittleShopApp < Sinatra::Base
   set :method_override, true
 
   get '/' do
-    redirect '/merchants'
+    erb :home
   end
 
   get '/merchants' do
@@ -26,7 +26,7 @@ class LittleShopApp < Sinatra::Base
 
   patch '/merchants/:id' do |id|
     Merchant.update(id.to_i, params[:merchant])
-    redirect '/merchants'
+    redirect "/merchants/#{id}"
   end
 
   get '/merchants/:id' do

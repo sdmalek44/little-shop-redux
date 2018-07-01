@@ -3,9 +3,22 @@
     <title>merchants</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Little Shop</a>
+      <a href="/merchants">Merchants</a>
+      <a href="/items">Items</a>
+      <a href="/invoices">Invoices</a>
+    </nav>
     <% if @merchant%>
+      <h1><%= @merchant.name %></h1>
+      <form action="/merchants/<%= @merchant.id %>/edit" method="get">
+        <input type="submit"  value="Edit">
+      </form>
+      <form action="/merchants/<%= @merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
       <ul>
-        <p>name: <%= @merchant.name %></p>
         <p>items: <% @merchant.items.each do |item| %>
                       <ul>
                         <li><a href="/items/<%= item.id %>"><%= item.title %></a></li>
@@ -13,11 +26,7 @@
                         <li><img src="<%= item.image %>" alt="dog"></li>
                       </ul>
                   <% end %>
-      </p>
-      <form action="/merchants/<%= @merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
+        </p>
     <% end %>
   </body>
 </html>

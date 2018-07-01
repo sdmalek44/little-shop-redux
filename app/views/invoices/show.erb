@@ -3,6 +3,12 @@
     <title>Invoices</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Little Shop</a>
+      <a href="/merchants">Merchants</a>
+      <a href="/items">Items</a>
+      <a href="/invoices">Invoices</a>
+    </nav>
     <% if @invoice %>
       <h4>ID: <%= @invoice.id %></h4>
       <h4>Status: <%= @invoice.status %></h4>
