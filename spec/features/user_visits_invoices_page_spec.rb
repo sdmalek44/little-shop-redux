@@ -15,7 +15,9 @@ RSpec.describe Invoice do
         expect(current_path).to eq("/invoices/#{invoice.id}/edit")
 
         fill_in('invoice[status]', with: 'complete')
-        click_on('Edit')
+        fill_in('merchant[name]', with: 'bobby')
+        click_on('Update Invoice')
+
         expect(current_path).to eq('/invoices')
         expect(page).to have_content('Status: complete')
       end
@@ -31,8 +33,9 @@ RSpec.describe Invoice do
         invoice_2 = Invoice.create(merchant_id: 2, status: 'complete')
 
         visit '/invoices'
+
         within("#delete-#{invoice_2.id}") do
-          click_on('delete')
+          click_on('Delete')
         end
 
         expect(page).not_to have_content('status: complete')
@@ -44,7 +47,7 @@ RSpec.describe Invoice do
         visit '/invoices'
         click_on(invoice_1.id)
         expect(current_path).to eq("/invoices/#{invoice_1.id}")
-        click_on('delete')
+        click_on('Delete')
         expect(current_path).to eq('/invoices')
         expect(page).not_to have_content('1')
       end

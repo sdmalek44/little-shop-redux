@@ -4,7 +4,7 @@ class Invoice < ActiveRecord::Base
   validates_presence_of :merchant_id, :status
 
   def merchant_name
-    merchant.name
+    merchant.name if merchant
   end
 
   def self.convert_params(invoice_params)
