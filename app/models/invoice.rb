@@ -11,4 +11,10 @@ class Invoice < ActiveRecord::Base
     invoice_params[:invoice][:merchant_id] = Merchant.find_or_create_by(name: invoice_params[:merchant][:name]).id
     invoice_params
   end
+
+  def total_price
+    invoice_items.inject(0) do |sum, invoice_item|
+      sum += invoice_item.total_price
+    end
+  end
 end
