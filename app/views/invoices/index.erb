@@ -3,8 +3,13 @@
     <title>Invoices</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Little Shop</a>
+      <a href="/merchants">Merchants</a>
+      <a href="/items">Items</a>
+      <a href="/invoices">Invoices</a>
+    </nav>
     <h1>Invoices</h1>
-
     <% if @invoices%>
       <% @invoices.each do |invoice| %>
       <a href="/invoices/<%= invoice.id %>" id='id-<%= invoice.id %>'><%= invoice.id %></a>

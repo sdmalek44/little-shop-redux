@@ -3,6 +3,12 @@
     <title>Items</title>
   </head>
   <body>
+    <nav>
+      <a href="/">Little Shop</a>
+      <a href="/merchants">Merchants</a>
+      <a href="/items">Items</a>
+      <a href="/invoices">Invoices</a>
+    </nav>
     <form action="/items/<%= @item.id %>" method="post">
       <input type="hidden" name="_method" value="PATCH">
       <p>merchant: <p>

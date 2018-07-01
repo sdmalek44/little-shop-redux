@@ -1,5 +1,15 @@
+<nav>
+  <a href="/">Little Shop</a>
+  <a href="/merchants">Merchants</a>
+  <a href="/items">Items</a>
+  <a href="/invoices">Invoices</a>
+</nav>
+<h1>Edit <%= @merchant.name %></h1>
 <form action="/merchants/<%= @merchant.id %>" method="post">
   <input type="hidden" name="_method" value="PATCH">
-  <input type="text" name="merchant[name]" value=" <%= @merchant.name %>">
+  <input type="text" name="merchant[name]" value=" <%= @merchant.name %>"><br>
   <input type="submit" value="Edit">
+</form>
+<form action="/merchants/<%= @merchant.id %>" method="get">
+  <input type="submit" value="Cancel">
 </form>
