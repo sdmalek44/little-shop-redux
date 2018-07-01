@@ -26,11 +26,11 @@
           <div class="left"><a href="/merchants/<%= merchant.id %>" id='name-<%= merchant.id %>'><%= merchant.name %></a></div>
           <div class="button-box">
             <form action="/merchants/<%=merchant.id%>/edit" method="get">
-              <input id="edit-<%= merchant.id %>" type="submit"  value="edit" class="button edit">
+              <input id="edit-<%= merchant.id %>" type="submit"  value="Edit" class="button edit">
             </form>
             <form id="delete-<%= merchant.id %>" action="/merchants/<%= merchant.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" value="delete" class="button delete"/>
+              <input type="submit" value="Delete" class="button delete"/>
             </form>
           </div>
         </article>
