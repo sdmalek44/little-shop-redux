@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  background-color: #d3ede5;
+  font-family: helvetica;
+  font-size: 20px;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.object-box {
+  width: 80%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  justify-content: space-between;
+  background-color: #e3f4f7;
+}
+
+.left {
+  margin-left: 20px;
+}
+
+.repositories {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  background-color: #b5e5d5;
+  height: 180px;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-link {
+  align-self: flex-start;
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 10%;
+  font-size: 25px
+}
+
+.header-title {
+  font-size: 70px;
+  margin: 0;
+}
+
+.title-and-button {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-merchant {
+  width: 300px;
+  height: 40px;
+}
+
+.create-button {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+.middle-part {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.object-box a {
+  margin: 0;
+}
+
+.object-box form {
+  margin: 0;
+  width: 50%;
+  height: 100%;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  border: 1px solid black;
+  font-size: 18px;
+}
+
+.button-box {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 4px;
+}
+
+.edit {
+  background-color: #d1bf38;
+}
+
+.delete {
+  background-color: #ba3232;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.left {
+  margin-left: 20px;
+  align-self: center;
+}
