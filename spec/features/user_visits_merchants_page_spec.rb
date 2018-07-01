@@ -11,9 +11,7 @@ RSpec.describe Merchant do
         click_on('Submit')
         expect(current_path).to eq('/merchants')
 
-        within('#name-1') do
-          expect(page).to have_content('example Merchant name')
-        end
+        expect(page).to have_content('example Merchant name')
       end
       it 'user can edit a merchant' do
         merchant = Merchant.create(name: 'bob')
