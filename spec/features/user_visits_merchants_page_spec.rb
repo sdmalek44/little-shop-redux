@@ -18,7 +18,7 @@ RSpec.describe Merchant do
 
         visit '/merchants'
 
-        click_on('edit')
+        click_on('Edit')
         expect(current_path).to eq("/merchants/#{merchant.id}/edit")
 
         fill_in('merchant[name]', with: 'a different merchant name')
@@ -35,7 +35,7 @@ RSpec.describe Merchant do
         visit '/merchants'
 
         within('#delete-3') do
-          click_button('delete')
+          click_button('Delete')
         end
 
         expect(page).not_to have_content('name: Andrew')
