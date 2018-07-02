@@ -107,4 +107,12 @@ class LittleShopApp < Sinatra::Base
     Item.delete(params[:id])
     redirect '/items'
   end
+
+  get '/items-dashboard' do
+    @items = Item.all
+    @items_count = @items.length
+    @newest = @items.newest
+    @oldest = @items.oldest
+    erb :'items/dashboard'
+  end
 end

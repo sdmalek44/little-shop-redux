@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/items/navbar.css">
+    <title>Item Dashboard</title>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a href="/home" class="left">Little Shop</a>
+      <a href="/merchants">Merchants</a>
+      <a href="/items">Items</a>
+      <a href="/invoices">Invoices</a>
+    </nav>
+    <p>Total Item Count<br/><%= @items_count%></p>
+    <p>Avg Price Per Item<br/><%= @items.average_price%></p>
+    <p>Item by Age<br/>Newest Item: <%= @newest%><br/>
+    </br/>Oldest Item: <%= @oldest%></p>
+  </body>
+</html>
