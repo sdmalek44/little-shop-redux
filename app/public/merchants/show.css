@@ -36,6 +36,23 @@ button {
   border: 2px solid black;
 }
 
+.no-underline {
+  text-decoration: none;
+  color: black;
+}
+
+.yellow-button {
+  width: 150px;
+  height: 90%;
+  text-decoration: none;
+  font-size: 20px;
+  background-color: #d1bf38;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .button {
   background-color: #ba3232;
   font-size: 20px;
