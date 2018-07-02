@@ -21,10 +21,10 @@ class Item < ActiveRecord::Base
   end
 
   def self.newest
-    maximum(:created_at)
+    order(:created_at).last.title
   end
 
   def self.oldest
-    minimum(:created_at)
+    order(:created_at).first.title
   end
 end
