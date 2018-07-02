@@ -22,8 +22,22 @@ RSpec.describe Item do
     end
   end
   describe 'Class Methods' do
-    it 'finds merchant with highest priced item' do
+    it 'converts csv headers to accurate names' do
+      Merchant.create(name: "Tom")
+      item_params = {merchant:{name: "Tom"},
+                    item:{name: "battleship",
+                          unit_price: 10}
+                    }
+      expected_result = {merchant:{name: "Tom"},
+                         item:{name: "battleship",
+                               unit_price: 10,
+                               merchant_id: 1,
+                               price: 0}
+                        }
 
+      expect(Item.convert_params(item_params)).to eq(expected_result)
+    end
+    it 'finds merchant with highest priced item' do
       merchant1 = Merchant.create(name: "Bob")
       item1 = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
       merchant2 = Merchant.create(name: "Joe")
@@ -57,6 +71,14 @@ RSpec.describe Item do
       expected_result = "puzzle"
 
       expect(Item.oldest).to eq(expected_result)
+    end
+  end
+  describe 'Instance Methods' do
+    it 'converts pennies into dollar amount' do
+      item = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
+
+      expected_result = 10.0
+      expect(item.money).to eq(expected_result)
     end
   end
 end
