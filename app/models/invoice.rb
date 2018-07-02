@@ -1,6 +1,7 @@
 class Invoice < ActiveRecord::Base
   has_many :invoice_items
   belongs_to :merchant
+  belongs_to :customer
   validates_presence_of :merchant_id, :status, :customer_id
 
   def self.status(status)
@@ -22,11 +23,6 @@ class Invoice < ActiveRecord::Base
     .order("total_price #{direction}")
     .limit(1)
   end
-
-  select('courses.*, avg(score) AS average_score')
-    .joins(:students)
-    .group(:course_id, :id)
-    .order('avg_score DESC')
 
   def merchant_name
     merchant.name if merchant
