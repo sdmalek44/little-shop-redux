@@ -1,16 +1,43 @@
 <html>
   <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="merchants/nav-bar.css">
+    <link rel="stylesheet" href="merchants/dashboard.css">
   </head>
   <body>
-    <h1>Merchants Dashboard</h1>
-    <div>Merchant With Most Items: <a href="/merchants/<%= @most_items.id %>"><%= @most_items.name %></a></div>
-    <div>Merchant With Highest Item Price: <a href="/merchants/<%= @highest_price.id %>"><%= @highest_price.name %></a></div>
-    <% @merchants.each do |merchant|%>
-      <a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a>
-      <li>Item Count: <%= merchant.item_count %></li>
-      <li>Avg Item Price: $<%= merchant.avg_item_price %></li>
-      <li>Total Cost Of Items: $<%= merchant.items_total_cost %></li>
-    <% end %>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+        <div class="repositories">
+          <a href="/merchants">Merchants</a>
+          <a href="/items">Items</a>
+          <a href="/invoices">Invoices</a>
+        </div>
+      </div>
+    </nav>
+    <header class="header">
+        <h1 class="header-title">Merchants Dashboard</h1>
+    </header>
+    <section class="middle-part">
+      <article class="top-merchants-box">
+        <article class="inner-box">
+          <div class="paragraphs">Merchant With Most Items:</div>
+          <div class="paragraphs"><a href="/merchants/<%= @most_items.id %>"><%= @most_items.name %></a></div>
+        </article>
+        <article class="inner-box">
+          <div class="paragraphs">Merchant With Highest Item Price:</div>
+          <div class="paragraphs"><a href="/merchants/<%= @highest_price.id %>"><%= @highest_price.name %></a></div>
+        </article>
+      </article>
+      <section class="each-objects">
+        <% @merchants.each do |merchant|%>
+          <article class="object-box">
+            <div class="left"><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></div>
+            <div class="left"><div class="underline">Item Count:</div><div><%= merchant.item_count %></div></div>
+            <div class="left"><div class="underline">Avg Item Price:</div><div>$<%= merchant.avg_item_price %></div></div>
+            <div class="left"><div class="underline">Total Cost Of Items:</div><div>$<%= merchant.items_total_cost %></div></div>
+          </article>
+        <% end %>
+      </section>
+    </section>
   </body>
 </html>

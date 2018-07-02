@@ -1,0 +1,59 @@
+.top-merchants-box {
+  width: 90%;
+  height: 150px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #b5e5d5;
+}
+
+.middle-part {
+  font-size: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.each-objects {
+  width: 93%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.inner-box {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.paragraphs {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.object-box {
+  width: 300;
+  height: 350;
+  border: 2px solid black;
+  background-color: #b5e5d5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 25px;
+  padding: 5px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.left {
+  margin-left: 10px;
+}
