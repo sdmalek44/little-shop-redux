@@ -11,23 +11,23 @@
     </header>
     <div class="invoice-status-percentages">
       <h4>Status Percentages</h4>
-      <p>Pending: <%= @pending_percent.to_i %></p>
-      <p>Complete: <%= @complete_percent.to_i %></p>
-      <p>Returned: <%= @returned_percent.to_i %></p>
+      <p>Pending: <%= @pending_percent.to_i %>%</p>
+      <p>Shipped: <%= @shipped_percent.to_i %>%</p>
+      <p>Returned: <%= @returned_percent.to_i %>%</p>
     </div>
     <div class="invoice-unit-prices">
       <h4>Unit Prices</h4>
       <h4>Highest</h4>
-      <a href="/invoices/<%= @max_invoice %>">Invoice: <%= @max_invoice %></a>
+      <a href="/invoices/<%= @max_invoice %>">Invoice: <%= @max_invoice.id %></a>
       <h4>Lowest</h4>
-      <a href="/invoices/<%= @min_invoice %>">Invoice: <%= @min_invoice %></a>
+      <a href="/invoices/<%= @min_invoice %>">Invoice: <%= @min_invoice.id %></a>
     </div>
     <div class="invoice-quantity">
       <h4>Quantity</h4>
       <h4>Highest</h4>
-      <a href="/invoices/<%= @max_quantity %>">Invoice: <%= @max_quantity %></a>
+      <a href="/invoices/<%= @max_quantity %>">Invoice: <%= @max_quantity.id %></a>
       <h4>Lowest</h4>
-      <a href="/invoices/<%= @min_quantity %>">Invoice: <%= @min_quantity %></a>
+      <a href="/invoices/<%= @min_quantity %>">Invoice: <%= @min_quantity.id %></a>
     </div>
 
   </body>

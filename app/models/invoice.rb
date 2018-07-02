@@ -3,6 +3,31 @@ class Invoice < ActiveRecord::Base
   belongs_to :merchant
   validates_presence_of :merchant_id, :status, :customer_id
 
+  def self.status(status)
+    where(status: status).count
+  end
+
+  def self.invoice_quantity(direction)
+    select("invoices.*, SUM(invoice_items.quantity) AS total_quantity")
+    .joins(:invoice_items)
+    .group(:invoice_id, :id)
+    .order("total_quantity #{direction}")
+    .limit(1)
+  end
+
+  def self.invoice_price(direction)
+    select("invoices.*, SUM(invoice_items.quantity * invoice_items.unit_price) AS total_price")
+    .joins(:invoice_items)
+    .group(:invoice_id, :id)
+    .order("total_price #{direction}")
+    .limit(1)
+  end
+
+  select('courses.*, avg(score) AS average_score')
+    .joins(:students)
+    .group(:course_id, :id)
+    .order('avg_score DESC')
+
   def merchant_name
     merchant.name if merchant
   end
@@ -19,8 +44,10 @@ class Invoice < ActiveRecord::Base
   end
 
   def total_quantity
-    invoice_items.inject(0) do |sum, invoice_item|
-      sum += invoice_item.quantity
-    end
+    # invoice_items.inject(0) do |sum, invoice_item|
+    #   sum += invoice_item.quantity
+    # end
+    invoice_items.sum("quantity")
   end
+
 end
