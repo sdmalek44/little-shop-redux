@@ -1,19 +1,35 @@
 <html>
   <head>
     <title>New Merchant</title>
+    <link rel="stylesheet" href="/merchants/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/merchants/edit-new.css" type="text/css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+        <div class="repositories">
+          <a href="/merchants">Merchants</a>
+          <a href="/items">Items</a>
+          <a href="/invoices">Invoices</a>
+        </div>
+      </div>
     </nav>
-    <h1>Create New Merchant</h1>
-    <form action="/merchants" method="post">
-      <p>Name</p>
-      <input type="text" name="merchant[name]">
-      <input type="submit" value="Submit">
-    </form>
+    <header class="header">
+      <h1 class="header-title">Create New Merchant</h1>
+    </header>
+    <section class="middle-part">
+        <article class="create-box">
+        <form action="/merchants" method="post">
+          <div class="name-box">
+            <div class="space-above">Name</div>
+            <input class="text-box" type="text" name="merchant[name]">
+          </div>
+          <div class="button-box">
+            <a href="/merchants"><button class="cancel">Cancel</button></a>
+            <input type="submit" value="Submit" class="button">
+          </div>
+        </form>
+      </article>
+    </section>
   </body>
 </html>

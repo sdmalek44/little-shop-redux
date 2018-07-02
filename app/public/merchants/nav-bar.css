@@ -13,6 +13,10 @@ body {
   align-items: center;
 }
 
+.left {
+  margin-left: 20px;
+}
+
 .repositories {
   width: 300px;
   display: flex;
