@@ -17,10 +17,10 @@
       <header class="header">
         <h1 class="header-title"><%= @merchant.name %></h1>
           <article class="form-box">
-            <a href="/merchants/<%= @merchant.id %>/edit"><button class="edit">Edit</button></a>
+            <a class="no-underline" href="/merchants/<%= @merchant.id %>/edit"><div class="yellow-button">Edit</div></a>
             <form class="form" action="/merchants/<%= @merchant.id %>" method="POST">
               <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" value="delete" class="button">
+              <input type="submit" value="Delete" class="button">
             </form>
           </article>
       </header>
