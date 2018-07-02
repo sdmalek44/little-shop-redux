@@ -107,4 +107,9 @@ class LittleShopApp < Sinatra::Base
     Item.delete(params[:id])
     redirect '/items'
   end
+
+  get '/invoices-dashboard' do
+    @invoices = Invoice.all
+    average_pending = @invoices.select{ |invoice| invoice.status == "Pending"}
+  end
 end

@@ -1,7 +1,7 @@
 class Invoice < ActiveRecord::Base
   has_many :invoice_items
   belongs_to :merchant
-  validates_presence_of :merchant_id, :status
+  validates_presence_of :merchant_id, :status, :customer_id
 
   def merchant_name
     merchant.name if merchant
