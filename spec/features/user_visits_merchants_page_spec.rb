@@ -22,7 +22,7 @@ RSpec.describe Merchant do
         expect(current_path).to eq("/merchants/#{merchant.id}/edit")
 
         fill_in('merchant[name]', with: 'a different merchant name')
-        click_on('Edit')
+        click_on('Update Merchant')
         expect(current_path).to eq("/merchants/#{merchant.id}")
 
         expect(page).to have_content('a different merchant name')
