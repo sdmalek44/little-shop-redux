@@ -13,7 +13,8 @@
     </nav>
     <p>Total Item Count<br/><%= @items_count%></p>
     <p>Avg Price Per Item<br/><%= @items.average_price%></p>
-    <p>Item by Age<br/>Newest Item: <%= @newest%><br/>
-    </br/>Oldest Item: <%= @oldest%></p>
+    <p>Item by Age</p>
+    <div class="newest">Newest Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
+    <div class-"oldest">Oldest Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
   </body>
 </html>
