@@ -17,4 +17,10 @@ class Invoice < ActiveRecord::Base
       sum += invoice_item.total_price
     end
   end
+
+  def total_quantity
+    invoice_items.inject(0) do |sum, invoice_item|
+      sum += invoice_item.quantity
+    end
+  end
 end

@@ -110,6 +110,19 @@ class LittleShopApp < Sinatra::Base
 
   get '/invoices-dashboard' do
     @invoices = Invoice.all
-    average_pending = @invoices.select{ |invoice| invoice.status == "Pending"}
+    pending = @invoices.select{ |invoice| invoice.status == "pending"}
+    complete = @invoices.select{ |invoice| invoice.status == "complete"}
+    returned = @invoices.select{ |invoice| invoice.status == "returned"}
+    @pending_percent = (pending.length / @invoices.length) * 100
+    @complete_percent = (complete.length / @invoices.length) * 100
+    @returned_percent = (returned.length / @invoices.length) * 100
+
+    @max_invoice = @invoices.max_by{ |invoice| invoice.total_price}.id
+    @min_invoice = @invoices.min_by{ |invoice| invoice.total_price}.id
+
+    @max_quantity = @invoices.max_by{ |invoice| invoice.total_quantity}.id
+    @min_quantity = @invoices.min_by{ |invoice| invoice.total_quantity}.id
+
+    erb :'invoices/invoice-dashboard'
   end
 end
