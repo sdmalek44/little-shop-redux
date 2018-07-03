@@ -55,7 +55,7 @@ RSpec.describe Item do
         fill_in('item[price]', with: 20)
         fill_in('item[image]', with: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk')
 
-        click_on("edit")
+        click_on("Update Item")
 
         expect(current_path).to eq("/items/#{item.id}")
 
