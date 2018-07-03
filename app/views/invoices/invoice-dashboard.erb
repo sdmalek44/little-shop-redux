@@ -28,19 +28,19 @@
       <div class="invoice-unit-prices">
         <article class="object-box">
           <h4>Unit Prices</h4>
-          <h4>Highest</h4>
-          <div>Invoice: </div><a href="/invoices/<%= @max_invoice.id %>"><%= @max_invoice.id %></a>
+          <h4 >Highest</h4>
+          <div>Invoice: </div><a id="high-invoice-price" href="/invoices/<%= @max_invoice.id %>"><%= @max_invoice.id %></a>
           <h4>Lowest</h4>
-          <div>Invoice: </div><a href="/invoices/<%= @min_invoice.id %>"><%= @min_invoice.id %></a>
+          <div>Invoice: </div><a id="low-invoice-price" href="/invoices/<%= @min_invoice.id %>"><%= @min_invoice.id %></a>
         </article>
       </div>
       <div class="invoice-quantity">
         <article class="object-box">
           <h4>Quantity</h4>
           <h4>Highest</h4>
-          <div>Invoice: </div><a href="/invoices/<%= @max_quantity.id %>"><%= @max_quantity.id %></a>
+          <div>Invoice: </div><a id="high-invoice-quantity" href="/invoices/<%= @max_quantity.id %>"><%= @max_quantity.id %></a>
           <h4>Lowest</h4>
-          <div>Invoice: </div><a href="/invoices/<%= @min_quantity.id %>"><%= @min_quantity.id %></a>
+          <div>Invoice: </div><a id="low-invoice-quantity" href="/invoices/<%= @min_quantity.id %>"><%= @min_quantity.id %></a>
         </article>
       </div>
     </section>

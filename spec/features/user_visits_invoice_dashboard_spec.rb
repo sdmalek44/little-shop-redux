@@ -39,13 +39,12 @@ RSpec.describe Invoice do
       it 'can see the highest and lowest invoices by price' do
 
         visit '/invoices-dashboard'
-        print page.html
 
         within("#high-invoice-price") do
-          expect(page).to have_content("Invoice: 1")
+          expect(page).to have_content("1")
         end
         within("#low-invoice-price") do
-          expect(page).to have_content("Invoice: 2")
+          expect(page).to have_content("2")
         end
       end
 
@@ -54,10 +53,10 @@ RSpec.describe Invoice do
         visit '/invoices-dashboard'
 
         within('#high-invoice-quantity') do
-          expect(page).to have_content("Invoice: 2")
+          expect(page).to have_content("2")
         end
         within('#low-invoice-quantity') do
-          expect(page).to have_content("Invoice: 1")
+          expect(page).to have_content("1")
         end
       end
 
@@ -65,7 +64,7 @@ RSpec.describe Invoice do
         visit '/invoices-dashboard'
 
         within('.invoice-unit-prices') do
-          click_link('Invoice: 1')
+          click_link('1')
         end
         expect(current_path).to eq('/invoices/1')
       end
@@ -74,7 +73,7 @@ RSpec.describe Invoice do
         visit '/invoices-dashboard'
 
         within('.invoice-unit-prices') do
-          click_link('Invoice: 2')
+          click_link('2')
         end
         expect(current_path).to eq('/invoices/2')
       end
@@ -83,7 +82,7 @@ RSpec.describe Invoice do
         visit '/invoices-dashboard'
 
         within('.invoice-quantity') do
-          click_link('Invoice: 2')
+          click_link('2')
         end
         expect(current_path).to eq('/invoices/2')
       end
@@ -92,7 +91,7 @@ RSpec.describe Invoice do
         visit '/invoices-dashboard'
 
         within('.invoice-quantity') do
-          click_link('Invoice: 1')
+          click_link('1')
         end
         expect(current_path).to eq('/invoices/1')
       end

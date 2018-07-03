@@ -10,11 +10,6 @@ RSpec.describe Invoice do
 
       expect(invoice).to_not be_valid
     end
-    it 'is invalid without a customer_id' do
-      invoice = Invoice.new(merchant_id: 5, status: 'pending')
-
-      expect(invoice).to_not be_valid
-    end
   end
   describe 'Methods' do
     it 'can filter invoices by status' do
