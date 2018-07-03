@@ -18,11 +18,21 @@
       <h1 class ="header-title">Items Dashboard</h1>
     </header>
     <section class="middle-part">
-      <p>Total Item Count<br/><%= @items_count%></p>
-      <p>Avg Price Per Item<br/><%= @items.average_price%></p>
-      <p>Item by Age</p>
-      <div class="newest">Newest Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
-      <div class="oldest">Oldest Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
+      <section class ="each-objects">
+        <article class="object-box">
+          <div class="center">Total Item Count</div>
+          <div class="center"><%= @items_count%></div>
+        </article>
+        <article class="object-box">
+          <div class="center">Avg Price Per Item</div>
+          <div class="center">$<%= @items.average_price%></div>
+        </article>
+        <article class="object-box">
+          <div class="center">Item by Age</div>
+          <div class="left"><div class="underline">Newest</div>Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
+          <div class="left"><div class="underline">Oldest</div>Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
+        </article>
+    </section>
   </section>
   </body>
 </html>
