@@ -1,26 +1,51 @@
 <html>
   <head>
     <title>Items</title>
+    <link rel="stylesheet" href="/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/edit-new.css" type="text/css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+      <div class="repositories">
+        <a href="/merchants">Merchants</a>
+        <a href="/items">Items</a>
+        <a href="/invoices">Invoices</a>
+      </div>
     </nav>
-    <form action="/items/<%= @item.id %>" method="post">
-      <input type="hidden" name="_method" value="PATCH">
-      <p>merchant: <p>
-      <input type="text" name="merchant[name]" value="<%= @item.merchant.name if @item.merchant %>">
-      <p>title: <p>
-      <input type="text" name="item[title]" value="<%= @item.title %>">
-      <p>description: <p>
-      <input type="text" name="item[description]" value="<%= @item.description %>">
-      <p>price: <p>
-      <input type="text" name="item[price]" value="<%= @item.money %>">
-      <p>image: <p>
-      <input type="text" name="item[image]" value="<%= @item.image %>">
-      <input type="submit" value="edit">
+    <header class="header">
+      <h1 class="header-title">Edit <%= @item.title %></h1>
+    </header>
+    <section class="middle-part">
+        <article class="create-box">
+          <form action="/items/<%= @item.id %>" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <div class="name-box">
+              <div class="space-above">Merchant Name</div>
+              <input class="text-box" type="text" name="merchant[name]" value="<%= @item.merchant.name if @item.merchant %>">
+            </div>
+            <div class="name-box">
+              <div class="space-above">Title</div>
+              <input class="text-box" type="text" name="item[title]" value="<%= @item.title %>">
+            </div>
+            <div class="name-box">
+              <div class="space-above">Description</div>
+              <input class="text-box" type="text" name="item[description]" value="<%= @item.description %>">
+            </div>
+            <div class="name-box">
+              <div class="space-above">Price</div>
+              <input class="text-box" type="text" name="item[price]" value="<%= @item.money %>">
+            </div>
+            <div class="name-box">
+              <div class="space-above">Image</div>
+              <input class="text-box" type="text" name="item[image]" value="<%= @item.image %>">
+            </div>
+            <div class="button-box">
+              <a href="/items/<%= @item.id %>"><button class="cancel">Cancel</button></a>
+              <input type="submit" value="Update Item" class="button">
+            </div>
+          </form>
+        </article>
+    </section>
   </body>
 </html>

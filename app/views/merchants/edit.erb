@@ -18,7 +18,7 @@
       <h1 class="header-title">Edit <%= @merchant.name %></h1>
     </header>
     <section class="middle-part">
-        <article class="create-box shorter-box">
+        <article class="create-box">
           <form action="/merchants/<%= @merchant.id %>" method="post">
             <input type="hidden" name="_method" value="PATCH">
             <div class="name-box">
