@@ -1,32 +1,38 @@
 <html>
   <head>
     <title>merchants</title>
+    <link rel="stylesheet" href="/merchants/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/merchants/show.css" type="text/css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+      <div class="repositories">
+        <a href="/merchants">Merchants</a>
+        <a href="/items">Items</a>
+        <a href="/invoices">Invoices</a>
+      </div>
     </nav>
     <% if @merchant%>
-      <h1><%= @merchant.name %></h1>
-      <form action="/merchants/<%= @merchant.id %>/edit" method="get">
-        <input type="submit"  value="Edit">
-      </form>
-      <form action="/merchants/<%= @merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
-      <ul>
-        <p>items: <% @merchant.items.each do |item| %>
-                      <ul>
-                        <li><a href="/items/<%= item.id %>"><%= item.title %></a></li>
-                        <li>$<%= item.money %></li>
-                        <li><img src="<%= item.image %>" alt="dog"></li>
-                      </ul>
-                  <% end %>
-        </p>
+      <header class="header">
+        <h1 class="header-title"><%= @merchant.name %></h1>
+          <article class="form-box">
+            <a class="no-underline" href="/merchants/<%= @merchant.id %>/edit"><div class="yellow-button">Edit</div></a>
+            <form class="form" action="/merchants/<%= @merchant.id %>" method="POST">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="submit" value="Delete" class="button">
+            </form>
+          </article>
+      </header>
+    <section class="middle">
+        <% @merchant.items.each do |item| %>
+          <article class="item-box">
+            <img src="<%= item.image %>" alt="dog" class="picture">
+            <p class="item-link"><a href="/items/<%= item.id %>"><%= item.title %></a></p>
+            <p>$<%= item.money %></p>
+          </article>
+        <% end %>
+    </section>
     <% end %>
   </body>
 </html>

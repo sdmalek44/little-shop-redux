@@ -10,6 +10,6 @@ class InvoiceItem < ActiveRecord::Base
   end
 
   def total_price
-    (unit_price + quantity) / 100.0
+    (unit_price * quantity) / 100.0
   end
 end

@@ -1,6 +1,22 @@
 RSpec.describe Merchant do
   describe 'Features' do
     context 'when visiting /merchants' do
+      it 'can see a list of merchants' do
+        merchant1 = Merchant.create(name: 'Steve')
+        merchant2 = Merchant.create(name: 'Seth')
+        merchant3 = Merchant.create(name: 'Andrew')
+
+        visit '/merchants'
+
+        expect(page).to have_content(merchant1.name)
+        expect(page).to have_content(merchant2.name)
+        expect(page).to have_content(merchant3.name)
+      end
+      it 'can see the title' do
+        visit '/merchants'
+
+        expect(page).to have_content('Merchants')
+      end
       it 'user can create a new merchant' do
         visit '/merchants'
 
@@ -18,13 +34,16 @@ RSpec.describe Merchant do
 
         visit '/merchants'
 
-        click_on('edit')
+        click_on('Edit')
         expect(current_path).to eq("/merchants/#{merchant.id}/edit")
 
         fill_in('merchant[name]', with: 'a different merchant name')
-        click_on('Edit')
+        click_on('Update Merchant')
         expect(current_path).to eq("/merchants/#{merchant.id}")
 
+        expect(page).to have_content('a different merchant name')
+
+        visit '/merchants'
         expect(page).to have_content('a different merchant name')
       end
       it 'user can delete a merchant' do
@@ -35,22 +54,10 @@ RSpec.describe Merchant do
         visit '/merchants'
 
         within('#delete-3') do
-          click_button('delete')
+          click_button('Delete')
         end
 
         expect(page).not_to have_content('name: Andrew')
-      end
-    end
-    context 'when visiting /merchants/:id' do
-      it 'will see a list of items for merchant' do
-        merchant = Merchant.create(name: 'Seth')
-        item1 = Item.create(merchant_id: merchant.id, title: "puzzle", description: "blah", price: 1000, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk")
-        item2 = Item.create(merchant_id: merchant.id, title: "basketball", description: "foo", price: 100, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk")
-
-        visit "/merchants/#{merchant.id}"
-
-        expect(page).to have_content("#{item1.title}", "$10.0")
-        expect(page).to have_content("#{item2.title}", "$1.0")
       end
     end
   end

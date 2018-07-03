@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Invoice Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <h1>Invoices Dashboard</h1>
+    </header>
+    <div class="invoice-status-percentages">
+      <h4>Status Percentages</h4>
+      <p>Pending: <%= @pending_percent.to_i %>%</p>
+      <p>Shipped: <%= @shipped_percent.to_i %>%</p>
+      <p>Returned: <%= @returned_percent.to_i %>%</p>
+    </div>
+    <div class="invoice-unit-prices">
+      <h4>Unit Prices</h4>
+      <h4>Highest</h4>
+      <a href="/invoices/<%= @max_invoice.id %>">Invoice: <%= @max_invoice.id %></a>
+      <h4>Lowest</h4>
+      <a href="/invoices/<%= @min_invoice.id %>">Invoice: <%= @min_invoice.id %></a>
+    </div>
+    <div class="invoice-quantity">
+      <h4>Quantity</h4>
+      <h4>Highest</h4>
+      <a href="/invoices/<%= @max_quantity.id %>">Invoice: <%= @max_quantity.id %></a>
+      <h4>Lowest</h4>
+      <a href="/invoices/<%= @min_quantity.id %>">Invoice: <%= @min_quantity.id %></a>
+    </div>
+
+  </body>
+</html>

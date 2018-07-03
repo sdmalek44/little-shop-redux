@@ -40,9 +40,11 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants-dashboard' do
-    @merchants = Merchant.all.includes(:items)
-    @most_items = @merchants.most_items
-    @highest_price = Item.merchant_with_highest_item_price
+    if Merchant.count > 0
+      @merchants = Merchant.all.includes(:items)
+      @most_items = @merchants.most_items
+      @highest_price = Item.merchant_with_highest_item_price
+    end
     erb :'merchants/merchants-dashboard'
   end
 
@@ -71,7 +73,25 @@ class LittleShopApp < Sinatra::Base
     Invoice.delete(params[:id])
     redirect '/invoices'
   end
+  
+  get '/invoices-dashboard' do
+    shipped = Invoice.status("shipped")
+    returned = Invoice.status("returned")
+    pending = Invoice.status("pending")
+    total = Invoice.count
+    @pending_percent = (pending / total.to_f) * 100
+    @shipped_percent = (shipped / total.to_f) * 100
+    @returned_percent = (returned / total.to_f) * 100
 
+    @max_quantity = Invoice.invoice_quantity("DESC").first
+    @min_quantity = Invoice.invoice_quantity("ASC").first
+
+    @max_invoice = Invoice.invoice_price("DESC").first
+    @min_invoice = Invoice.invoice_price("ASC").first
+
+    erb :'invoices/invoice-dashboard'
+  end
+  
   get '/items' do
     @items = Item.all
     erb :'items/index'
