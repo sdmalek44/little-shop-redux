@@ -1,24 +1,33 @@
 <html>
   <head>
     <title>Items</title>
+    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/show.css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+      <div class="repositories">
+        <a href="/merchants">Merchants</a>
+        <a href="/items">Items</a>
+        <a href="/invoices">Invoices</a>
+      </div>
     </nav>
-    <h1>Items</h1>
-    <div>
-      <a href="/items/new" class="new-item"><button class="new-item">Create A New Item</button></a>
-    </div>
-    <% if @items%>
-      <% @items.each do |item| %>
-      <img src="<%= item.image %>"><br>
-      <a href="/items/<%= item.id %>" id='title-<%= item.id %>'><%= item.title %></a><br>
-      <dib>$<%= item.money %></div><br>
-      <% end %>
-    <% end %>
+    <header class="header">
+      <div class="dashboard-link"><a href="/items-dashboard">Dashboard</a></div>
+      <div class="title-and-button">
+        <h1 class="header-title">Items</h1>
+        <a href="/items/new" class="new-merchant"><button class="create-button">Create a new Item</button></a>
+      </div>
+    </header>
+    <section class="middle">
+        <% @items.each do |item| %>
+          <article class="item-box">
+            <img src="<%= item.image %>" alt="dog" class="picture">
+            <p class="item-link"><a href="/items/<%= item.id %>"><%= item.title %></a></p>
+            <p>$<%= item.money %></p>
+          </article>
+        <% end %>
+    </section>
   </body>
 </html>

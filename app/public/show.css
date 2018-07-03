@@ -88,3 +88,63 @@ button {
 .picture {
   width: 100%;
 }
+
+.object-box {
+  width: 80%;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  justify-content: space-between;
+  background-color: #e3f4f7;
+}
+
+.small-box {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.large-box {
+  width: 65%;
+  display: flex;
+  align-items: center;
+}
+
+.gray {
+  background-color: gray;
+}
+
+.large-text {
+  font-size: 30px;
+}
+
+.title-box {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.titley-box {
+  width: 20%;
+  height: 100%;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.linky-box {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 70px;
+
+}
+
+.white {
+  background-color: white;
+}
