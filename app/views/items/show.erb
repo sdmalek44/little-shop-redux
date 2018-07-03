@@ -1,27 +1,40 @@
 <html>
   <head>
     <title>Item</title>
+    <link rel="stylesheet" href="/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/show.css" type="text/css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+      <div class="repositories">
+        <a href="/merchants">Merchants</a>
+        <a href="/items">Items</a>
+        <a href="/invoices">Invoices</a>
+      </div>
     </nav>
-    <h1>Item</h1>
-    <form action="/items/<%= @item.id %>/edit" method="get">
-      <input type="submit" value="edit">
-    </form>
-    <form action="/items/<%= @item.id %>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="delete">
-    </form>
-    <ul>
-      <li><%= @item.title %></li>
-      <li><%= @item.description %></li>
-      <li><%= "$#{@item.money}" %></li>
-      <li><img src="<%= @item.image %>"></li>
-    </ul>
+    <header class="header">
+      <h1 class="header-title"><%= @item.title %></h1>
+        <article class="form-box">
+          <a class="no-underline" href="/items/<%= @item.id %>/edit"><div class="yellow-button">Edit</div></a>
+          <form class="form" action="/items/<%= @item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="button">
+          </form>
+        </article>
+    </header>
+    <section class="middle-part">
+      <article class="lefty-box">
+        <a class="name-big" href="/merchants/<%= @item.merchant_id %>"><%= @item.merchant.name %></a>
+        <div class="stretch-photo"><img class="stretch-photo" src="<%= @item.image %>"></div>
+      </article>
+      <article class="righty-box">
+        <div class="item-title"><%= @item.title %></div>
+        <div class="item-desc"><%= @item.description %></div><br>
+        <div class="big-font">Price: <%= "$#{@item.money}" %></div>
+      </article>
+    </section>
+
+
   </body>
 </html>
