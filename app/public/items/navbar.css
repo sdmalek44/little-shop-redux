@@ -1,0 +1,25 @@
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: lightgrey;
+
+/* Style the navigation bar links */
+.navbar a {
+    float: left; /* Make sure that the links stay side-by-side */
+    display: block; /* Change the display to block, for responsive reasons (see below) */
+    color: black; /* White text color */
+    text-align: right; /* Center the text */
+    padding: 14px 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Right-aligned link */
+.navbar a.left {
+    float: left; /* Float a link to the right */
+}
+
+/* Change color on hover/mouse-over */
+.navbar a:hover {
+    background-color: #ddd; /* Grey background color */
+    color: white; /* Black text color */
+}

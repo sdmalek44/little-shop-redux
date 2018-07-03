@@ -15,4 +15,16 @@ class Item < ActiveRecord::Base
   def self.merchant_with_highest_item_price
     all.order(:price).last.merchant
   end
+
+  def self.average_price
+    (average(:price).to_f / 100.0).round(2)
+  end
+
+  def self.newest
+    order(:created_at).last
+  end
+
+  def self.oldest
+    order(:created_at).first
+  end
 end
