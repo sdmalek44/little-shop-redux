@@ -1,8 +1,17 @@
+#home-body {
+  background-color: white;
+}
+
+
 body {
   margin: 0;
   background-color: #d3ede5;
   font-family: helvetica;
   font-size: 20px;
+}
+
+#home-nav {
+  background-color: #d3ede5;
 }
 
 .nav-bar {
@@ -43,4 +52,10 @@ body {
 .header-title {
   font-size: 70px;
   height: 80%;
+}
+
+.main-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
