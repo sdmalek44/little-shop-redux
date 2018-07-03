@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Invoice Dashboard</title>
+    <title>Invoices Dashboard</title>
   </head>
   <body>
     <header>
@@ -18,16 +18,16 @@
     <div class="invoice-unit-prices">
       <h4>Unit Prices</h4>
       <h4>Highest</h4>
-      <a href="/invoices/<%= @max_invoice.id %>">Invoice: <%= @max_invoice.id %></a>
+      <a id="high-invoice-price" href="/invoices/<%= @max_invoice.id %>">Invoice: <%= @max_invoice.id %></a>
       <h4>Lowest</h4>
-      <a href="/invoices/<%= @min_invoice.id %>">Invoice: <%= @min_invoice.id %></a>
+      <a id="low-invoice-price" href="/invoices/<%= @min_invoice.id %>">Invoice: <%= @min_invoice.id %></a>
     </div>
     <div class="invoice-quantity">
       <h4>Quantity</h4>
       <h4>Highest</h4>
-      <a href="/invoices/<%= @max_quantity.id %>">Invoice: <%= @max_quantity.id %></a>
+      <a id="high-invoice-quantity"href="/invoices/<%= @max_quantity.id %>">Invoice: <%= @max_quantity.id %></a>
       <h4>Lowest</h4>
-      <a href="/invoices/<%= @min_quantity.id %>">Invoice: <%= @min_quantity.id %></a>
+      <a id="low-invoice-quantity" href="/invoices/<%= @min_quantity.id %>">Invoice: <%= @min_quantity.id %></a>
     </div>
 
   </body>
