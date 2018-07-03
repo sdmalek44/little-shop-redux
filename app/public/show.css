@@ -150,8 +150,8 @@ button {
 }
 
 .lefty-box {
-  height: 600px;
   width: 50%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -175,6 +175,7 @@ button {
 
 .stretch-photo {
   width: 95%;
+  margin-bottom: 20px;
 }
 
 .name-big {
@@ -196,6 +197,8 @@ button {
   font-size: 15px;
   border: 2px solid black;
   background-color: #b5e5d5;
+  padding-top: 20;
+  padding-bottom: 20;
 }
 
 .big-font {
