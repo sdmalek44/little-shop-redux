@@ -25,7 +25,7 @@
           <article class="item-box">
             <img src="<%= item.image %>" alt="dog" class="picture">
             <p class="item-link"><a href="/items/<%= item.id %>"><%= item.title %></a></p>
-            <p>$<%= item.money %></p>
+            <p><%= "$ %.2f" % "#{item.money}" %></p>
           </article>
         <% end %>
     </section>
