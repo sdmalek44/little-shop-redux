@@ -15,13 +15,14 @@ RSpec.describe Invoice do
         click_on('edit')
         expect(current_path).to eq("/invoices/#{invoice.id}/edit")
 
-        fill_in('invoice[status]', with: 'complete')
+        find('.invoice-status-select').find(:option, "pending").select_option
+        # fill_in('invoice[status]', with: 'complete')
         fill_in('merchant[name]', with: 'bobby')
         click_on('Update Invoice')
 
         expect(current_path).to eq("/invoices/#{invoice.id}")
-        
-        expect(page).to have_content('Invoice: 1 - complete')
+
+        expect(page).to have_content('Invoice: 1 - pending')
       end
       it 'user can view a single invoice' do
         invoice = Invoice.create(merchant_id: 5, status: 'pending')

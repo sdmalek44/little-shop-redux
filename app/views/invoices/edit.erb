@@ -26,7 +26,12 @@
               <div class="space-above">Merchant</div>
               <input class="text-box" type="text" name="merchant[name]" value="<%= @invoice.merchant.name %>">
               <div class="space-above">Status</div>
-              <input class="text-box" type="text" name="invoice[status]" value="<%= @invoice.status %>">
+              <select class="invoice-status-select" name="invoice[status]">
+                <option value="pending">pending</option>
+                <option value="shipped">shipped</option>
+                <option value="returned">returned</option>
+              </select>
+              <!-- <input class="text-box" type="text" name="invoice[status]" value="<%= @invoice.status %>"> -->
             </div>
             <div class="button-box">
               <a href="/invoices/<%= @invoice.id %>"><button class="cancel">Cancel</button></a>
