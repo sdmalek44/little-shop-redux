@@ -1,5 +1,6 @@
 class InvoiceItem < ActiveRecord::Base
   belongs_to :item
+  belongs_to :invoice
 
   def item_title
     item.title
