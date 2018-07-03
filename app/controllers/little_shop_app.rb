@@ -1,4 +1,8 @@
+require 'will_paginate/view_helpers/sinatra'
+require 'will_paginate/active_record'
+
 class LittleShopApp < Sinatra::Base
+  include WillPaginate::Sinatra::Helpers
   set :method_override, true
 
   get '/' do
@@ -6,7 +10,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.all
+    @merchants = Merchant.paginate(:page => params[:page], :per_page => 30)
     erb :'merchants/index'
   end
 
@@ -49,7 +53,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/invoices' do
-    @invoices = Invoice.all
+    @invoices = Invoice.paginate(:page => params[:page], :per_page => 30)
     erb :'invoices/index'
   end
 
@@ -93,7 +97,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items' do
-    @items = Item.all
+    @items = Item.paginate(:page => params[:page], :per_page => 20)
     erb :'items/index'
   end
 
