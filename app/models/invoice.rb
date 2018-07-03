@@ -5,8 +5,8 @@ class Invoice < ActiveRecord::Base
   belongs_to :customer
   validates_presence_of :merchant_id, :status
 
-  def self.status(status)
-    where(status: status).count
+  def self.status_percent(status)
+    (where(status: status).count / all.count.to_f) * 100
   end
 
   def self.invoice_quantity(direction)

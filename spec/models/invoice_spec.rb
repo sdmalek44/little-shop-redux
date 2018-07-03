@@ -20,13 +20,13 @@ RSpec.describe Invoice do
       invoice_5 = Invoice.create(customer_id: 4, merchant_id: 2, status: 'shipped')
       invoice_6 = Invoice.create(customer_id: 5, merchant_id: 3, status: 'pending')
 
-      actual_shipped = Invoice.status("shipped")
-      actual_pending = Invoice.status("pending")
-      actual_returned = Invoice.status("returned")
+      actual_shipped = Invoice.status_percent("shipped")
+      actual_pending = Invoice.status_percent("pending")
+      actual_returned = Invoice.status_percent("returned")
 
-      expect(actual_shipped).to eq(2)
-      expect(actual_pending).to eq(3)
-      expect(actual_returned).to eq(1)
+      expect(actual_shipped).to eq(33.33333333333333)
+      expect(actual_pending).to eq(50)
+      expect(actual_returned).to eq(16.666666666666664)
     end
     it 'can find highest and lowest invoices by quantity' do
       invoice_1 = Invoice.create(customer_id: 5, merchant_id: 3, status: 'pending')

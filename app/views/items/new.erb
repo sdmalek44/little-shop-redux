@@ -22,7 +22,12 @@
         <form action="/items" method="post">
           <div class="name-box">
             <div class="space-above">Merchant</div>
-            <input class="text-box" type="text" name="merchant[name]">
+            <select class="merchant-select" name="merchant">
+              <% @merchants.each do |merchant| %>
+                <option value="<%= merchant.id %>"> <%= merchant.name %></option>
+              <% end %>
+            </select>
+            <!-- <input class="text-box" type="text" name="merchant[name]"> -->
           </div>
           <div class="name-box">
             <div class="space-above">Title</div>

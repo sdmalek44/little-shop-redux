@@ -28,7 +28,7 @@ RSpec.describe Invoice do
       it 'can see the percentages of invoices with each status' do
 
         visit '/invoices-dashboard'
-
+        save_and_open_page
         expect(page).to have_content("Pending: 50%")
         expect(page).to have_content("Returned: 50%")
         expect(page).to have_content("Shipped: 0%")

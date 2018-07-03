@@ -75,13 +75,9 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/invoices-dashboard' do
-    shipped = Invoice.status("shipped")
-    returned = Invoice.status("returned")
-    pending = Invoice.status("pending")
-    total = Invoice.count
-    @pending_percent = (pending / total.to_f) * 100
-    @shipped_percent = (shipped / total.to_f) * 100
-    @returned_percent = (returned / total.to_f) * 100
+    @pending_percent = Invoice.status_percent("pending")
+    @shipped_percent = Invoice.status_percent("shipped")
+    @returned_percent = Invoice.status_percent("returned")
 
     @max_quantity = Invoice.invoice_quantity("DESC").first
     @min_quantity = Invoice.invoice_quantity("ASC").first
@@ -98,6 +94,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/new' do
+    @merchants = Merchant.all
     erb :'items/new'
   end
 
