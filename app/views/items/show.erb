@@ -31,7 +31,7 @@
       <article class="righty-box">
         <div class="item-title"><%= @item.title %></div>
         <div class="item-desc"><%= @item.description %></div><br>
-        <div class="big-font">Price: <%= "$#{@item.money}" %></div>
+        <div class="big-font">Price: <%= "$ %.2f" % "#{@item.money}" %></div>
       </article>
     </section>
   </body>

@@ -15,7 +15,7 @@ RSpec.describe Item do
         expect(current_path).to eq('/items')
 
         expect(page).to have_content('puzzle')
-        expect(page).to have_content('$2000.0')
+        expect(page).to have_content('$ 2000.00')
         expect(page).to have_css("img[src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk']")
       end
       it 'can click to go to items show page' do
@@ -52,7 +52,7 @@ RSpec.describe Item do
         fill_in('merchant[name]', with: 'bill')
         fill_in('item[title]', with: 'title')
         fill_in('item[description]', with: 'new')
-        fill_in('item[price]', with: 20)
+        fill_in('item[price]', with: 200)
         fill_in('item[image]', with: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk')
 
         click_on("Update Item")
@@ -61,7 +61,7 @@ RSpec.describe Item do
 
         expect(page).to have_content("title")
         expect(page).to have_content("new")
-        expect(page).to have_content("$20.0")
+        expect(page).to have_content("$ 200.00")
         expect(page).to have_css("img[src=\"#{item.image}\"]")
       end
       it 'can delete an item' do
