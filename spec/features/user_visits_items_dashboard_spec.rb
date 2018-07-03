@@ -50,7 +50,9 @@ RSpec.describe Item do
 
         item1 = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
         item2 = Item.create(merchant_id: 2, title: 'chess', description: '300 piece jigsaw', price: 2000, image: "google.com")
-
+        Merchant.create(name: 'bill')
+        Merchant.create(name: 'bob')
+        
         visit '/items-dashboard'
 
         click_link('chess')
@@ -61,6 +63,8 @@ RSpec.describe Item do
 
         item1 = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
         item2 = Item.create(merchant_id: 2, title: 'chess', description: '300 piece jigsaw', price: 2000, image: "google.com")
+        Merchant.create(name: 'bill')
+        Merchant.create(name: 'bob')
 
         visit '/items-dashboard'
 

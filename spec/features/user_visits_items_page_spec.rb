@@ -32,7 +32,7 @@ RSpec.describe Item do
     context 'when visiting /items/:id' do
       it 'can see specific merchants attributes' do
         item = Item.create(title: 'the', description: 'thing', price: 123, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk', merchant_id: 1)
-
+        Merchant.create(name: 'bill')
         visit "/items/#{item.id}"
 
         expect(page).to have_content("#{item.title}")
@@ -45,7 +45,7 @@ RSpec.describe Item do
 
         visit "/items/#{item.id}"
 
-        click_button("edit")
+        click_link("Edit")
 
         expect(current_path).to eq("/items/#{item.id}/edit")
 
@@ -55,7 +55,7 @@ RSpec.describe Item do
         fill_in('item[price]', with: 20)
         fill_in('item[image]', with: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk')
 
-        click_button("edit")
+        click_on("edit")
 
         expect(current_path).to eq("/items/#{item.id}")
 
@@ -66,10 +66,11 @@ RSpec.describe Item do
       end
       it 'can delete an item' do
         item = Item.create(title: 'the', description: 'thing', price: 123, image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMCV5BSXNic3ROSU9tsk4oIEqpBro_HEW-Vzbu6G9dtr6xTKkk', merchant_id: 1)
+        Merchant.create(name: 'bill')
 
         visit "/items/#{item.id}"
 
-        click_button("delete")
+        click_button("Delete")
 
         expect(current_path).to eq ('/items')
 
