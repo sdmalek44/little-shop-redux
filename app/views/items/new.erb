@@ -1,27 +1,51 @@
 <html>
   <head>
     <title>New Item</title>
+    <link rel="stylesheet" href="/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/edit-new.css" type="text/css">
   </head>
   <body>
-    <nav>
-      <a href="/">Little Shop</a>
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+        <div class="repositories">
+          <a href="/merchants">Merchants</a>
+          <a href="/items">Items</a>
+          <a href="/invoices">Invoices</a>
+        </div>
+      </div>
     </nav>
-    <h1>Create New Item</h1>
-    <form action="/items" method="post">
-      <p>merchant:</p>
-      <input type="text" name="merchant[name]"/>
-      <p>title:</p>
-      <input type="text" name="item[title]">
-      <p>description:</p>
-      <textarea name="item[description]"></textarea>
-      <p>price:</p>
-      <input type="text" name="item[price]">
-      <p>image:</p>
-      <input type="url" name="item[image]"/><br>
-      <input type="submit" value="Create Item">
-    </form>
+    <header class="header">
+      <h1 class="header-title">Create New Item</h1>
+    </header>
+    <section class="middle-part">
+        <article class="create-box">
+        <form action="/items" method="post">
+          <div class="name-box">
+            <div class="space-above">Merchant</div>
+            <input class="text-box" type="text" name="merchant[name]">
+          </div>
+          <div class="name-box">
+            <div class="space-above">Title</div>
+            <input class="text-box" type="text" name="item[title]">
+          </div>
+          <div class="name-box">
+            <div class="space-above">Description</div>
+            <textarea class="text-box" name="item[description]"></textarea>
+          </div>
+          <div class="name-box">
+            <div class="space-above">Price</div>
+            <input class="text-box" type="text" name="item[price]">
+          </div>
+          <div class="name-box">
+            <div class="space-above">Image</div>
+            <input class="text-box" type="text" name="item[image]">
+          </div>
+          <div class="button-box">
+            <a href="/items"><button class="cancel">Cancel</button></a>
+            <input type="submit" value="Create Item" class="button">
+          </div>
+        </form>
+      </article>
+    </section>
   </body>
 </html>
