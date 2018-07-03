@@ -1,22 +1,38 @@
 <html>
   <head>
-    <link rel="stylesheet" href="/items/navbar.css">
+    <link rel="stylesheet" href="/nav-bar.css">
+    <link rel="stylesheet" href="/dashboard.css">
     <title>Item Dashboard</title>
   </head>
   <body>
-    <a href="/">Little Shop</a>
-    <nav class="navbar">
-      <a href="/merchants">Merchants</a>
-      <a href="/items">Items</a>
-      <a href="/invoices">Invoices</a>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+        <div class="repositories">
+          <a href="/merchants">Merchants</a>
+          <a href="/items">Items</a>
+          <a href="/invoices">Invoices</a>
+        </div>
+      </div>
     </nav>
-    <header>
-      <h1>Items Dashboard</h1>
+    <header class="header">
+      <h1 class ="header-title">Items Dashboard</h1>
     </header>
-    <p>Total Item Count<br/><%= @items_count%></p>
-    <p>Avg Price Per Item<br/><%= @items.average_price%></p>
-    <p>Item by Age</p>
-    <div class="newest">Newest Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
-    <div class="oldest">Oldest Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
+    <section class="middle-part">
+      <section class ="each-objects">
+        <article class="object-box">
+          <div class="center">Total Item Count</div>
+          <div class="center"><%= @items_count%></div>
+        </article>
+        <article class="object-box">
+          <div class="center">Avg Price Per Item</div>
+          <div class="center">$<%= @items.average_price%></div>
+        </article>
+        <article class="object-box">
+          <div class="center">Item by Age</div>
+          <div class="left"><div class="underline">Newest</div>Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
+          <div class="left"><div class="underline">Oldest</div>Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
+        </article>
+    </section>
+  </section>
   </body>
 </html>
