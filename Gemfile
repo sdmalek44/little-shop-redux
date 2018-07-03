@@ -16,4 +16,5 @@ group :development, :test do
   gem 'tux'
   gem 'database_cleaner'
   gem 'simplecov'
+  gem 'will_paginate'
 end
