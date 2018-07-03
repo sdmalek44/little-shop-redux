@@ -16,8 +16,6 @@ RSpec.describe Invoice do
 
         invoice_2.invoice_items.create(quantity: 4, unit_price: 10, item_id: 3)
         invoice_2.invoice_items.create(quantity: 2, unit_price: 5, item_id: 4)
-
-
       end
 
       it 'can see the title' do
