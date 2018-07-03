@@ -60,7 +60,7 @@ RSpec.describe Item do
       item1 = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
       item2 = Item.create(merchant_id: 2, title: 'chess', description: '300 piece jigsaw', price: 2000, image: "google.com")
 
-      expected_result = "chess"
+      expected_result = item2
 
       expect(Item.newest).to eq(expected_result)
     end
@@ -68,7 +68,7 @@ RSpec.describe Item do
       item1 = Item.create(merchant_id: 1, title: 'puzzle', description: '300 piece jigsaw', price: 1000, image: "google.com")
       item2 = Item.create(merchant_id: 2, title: 'chess', description: '300 piece jigsaw', price: 2000, image: "google.com")
 
-      expected_result = "puzzle"
+      expected_result = item1
 
       expect(Item.oldest).to eq(expected_result)
     end
