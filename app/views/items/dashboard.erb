@@ -3,7 +3,6 @@
     <link rel="stylesheet" href="/items/navbar.css">
     <title>Item Dashboard</title>
   </head>
-
   <body>
     <a href="/">Little Shop</a>
     <nav class="navbar">
@@ -11,10 +10,13 @@
       <a href="/items">Items</a>
       <a href="/invoices">Invoices</a>
     </nav>
+    <header>
+      <h1>Items Dashboard</h1>
+    </header>
     <p>Total Item Count<br/><%= @items_count%></p>
     <p>Avg Price Per Item<br/><%= @items.average_price%></p>
     <p>Item by Age</p>
     <div class="newest">Newest Item:<a href="/items/<%=@newest.id%>"> <%= @newest.title%></a></div>
-    <div class-"oldest">Oldest Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
+    <div class="oldest">Oldest Item:<a href="/items/<%=@oldest.id%>"> <%= @oldest.title%></a></div>
   </body>
 </html>
