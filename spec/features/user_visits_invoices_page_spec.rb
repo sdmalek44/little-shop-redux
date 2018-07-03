@@ -8,7 +8,8 @@ RSpec.describe Invoice do
         expect(page).to have_content('1')
       end
       it 'user can edit an invoice' do
-        invoice = Invoice.create(merchant_id: 5, status: 'pending')
+        merchant = Merchant.create(name: 'bob')
+        invoice = Invoice.create(merchant_id: 1, status: 'pending')
 
         visit '/invoices'
         click_on('edit')
@@ -18,8 +19,9 @@ RSpec.describe Invoice do
         fill_in('merchant[name]', with: 'bobby')
         click_on('Update Invoice')
 
-        expect(current_path).to eq('/invoices')
-        expect(page).to have_content('Status: complete')
+        expect(current_path).to eq("/invoices/#{invoice.id}")
+        
+        expect(page).to have_content('Invoice: 1 - complete')
       end
       it 'user can view a single invoice' do
         invoice = Invoice.create(merchant_id: 5, status: 'pending')
@@ -34,7 +36,7 @@ RSpec.describe Invoice do
 
         visit '/invoices'
 
-        within("#delete-#{invoice_2.id}") do
+        within("form#delete-#{invoice_2.id}") do
           click_on('Delete')
         end
 

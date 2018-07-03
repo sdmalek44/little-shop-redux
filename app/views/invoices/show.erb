@@ -26,7 +26,7 @@
       </header>
       <div class="title-box">
         <div class="titley-box large-text">Total Price: $<%= @invoice.total_price %></div>
-        <div class="linky-box"><a href="/merchants/<%= @invoice.merchant.id %>"><%= @invoice.merchant_name %></a></div>
+        <div class="linky-box"><a href="/merchants/<%= @invoice.merchant_id %>"><%= @invoice.merchant_name %></a></div>
       </div>
     <% end %>
       <section class="middle">
