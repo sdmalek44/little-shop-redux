@@ -2,11 +2,16 @@ RSpec.describe Item do
   describe 'Features' do
     context 'when visiting /items' do
       it 'user can create a new item' do
-        visit '/items'
+        merchant = Merchant.create(name: "a merchant")
 
+        visit '/items'
         click_link('Create')
         expect(current_path).to eq('/items/new')
 
+
+
+        save_and_open_page
+        find('.merchant-select').find(:option, merchant.name).select_option
         fill_in('item[title]', with: 'puzzle')
         fill_in('item[description]', with: 'stuff')
         fill_in('item[price]', with: 2000)
