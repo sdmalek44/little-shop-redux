@@ -1,14 +1,57 @@
-<nav>
-  <a href="/">Little Shop</a>
-  <a href="/merchants">Merchants</a>
-  <a href="/items">Items</a>
-  <a href="/invoices">Invoices</a>
-</nav>
-<form action="/invoices/<%= @invoice.id %>" method="post">
-  <input type="hidden" name="_method" value="PATCH">
-  <input type="text" name="invoice[status]" value=" <%= @invoice.status %>">
-  <input type="submit" value="Update Invoice">
-</form>
-<form action="/invoices/<%= @invoice.id %>" method="GET">
-  <input type="submit" value="Cancel">
-</form>
+<html>
+  <head>
+    <title>Invoices Dashboard</title>
+  </head>
+  <body>
+    <link rel="stylesheet" href="/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/edit-new.css" type="text/css">
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="left"><a href="/">Little Shop</a></div>
+      <div class="repositories">
+        <a href="/merchants">Merchants</a>
+        <a href="/items">Items</a>
+        <a href="/invoices">Invoices</a>
+      </div>
+    </nav>
+    <header class="header">
+      <h1 class="header-title">Invoice: <%= @invoice.id %> - <%= @invoice.status %></h1>
+    </header>
+    <section class="middle-part reflex">
+        <article class="create-box shorter-box">
+          <form action="/invoices/<%= @invoice.id %>" method="post">
+            <input type="hidden" name="_method" value="PATCH">
+            <div class="name-box">
+              <div class="space-above">Merchant</div>
+              <input class="text-box" type="text" name="merchant[name]" value="<%= @invoice.merchant.name %>">
+              <div class="space-above">Status</div>
+              <input class="text-box" type="text" name="invoice[status]" value="<%= @invoice.status %>">
+            </div>
+            <div class="button-box">
+              <a href="/invoices/<%= @invoice.id %>"><button class="cancel">Cancel</button></a>
+              <input type="submit" value="Update Invoice" class="button">
+            </div>
+          </form>
+        </article>
+        <section class="lower-box">
+          <% if @invoice.merchant %>
+            <article class="object-box gray">
+              <div class="small-box">Item Id</div>
+              <div class="large-box">Item Title</div>
+              <div class="small-box">Quantity</div>
+              <div class="small-box">Unit Price</div>
+            </article>
+            <% @invoice.invoice_items.each_with_index do |invoice_item, index| %>
+            <article class="object-box <%= "gray" if index % 2 != 0 %>">
+              <div class="small-box"><a href="/items/<%= invoice_item.item_id %>"><%= invoice_item.item_id %></a></div>
+              <div class="large-box"><%= invoice_item.item_title %></div>
+              <div class="small-box"><%= invoice_item.quantity %></div>
+              <div class="small-box"><%= invoice_item.money %></div>
+            </article>
+            <% end %>
+          <% end %>
+        </section>
+    </section>
+  </body>
+</html>

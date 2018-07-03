@@ -2,8 +2,8 @@
   <head>
     <meta charset="utf-8">
     <title>Edit Merchant</title>
-    <link rel="stylesheet" href="/merchants/nav-bar.css" type="text/css">
-    <link rel="stylesheet" href="/merchants/edit-new.css" type="text/css">
+    <link rel="stylesheet" href="/nav-bar.css" type="text/css">
+    <link rel="stylesheet" href="/edit-new.css" type="text/css">
   </head>
   <body>
     <nav class="nav-bar">
@@ -18,7 +18,7 @@
       <h1 class="header-title">Edit <%= @merchant.name %></h1>
     </header>
     <section class="middle-part">
-        <article class="create-box">
+        <article class="create-box shorter-box">
           <form action="/merchants/<%= @merchant.id %>" method="post">
             <input type="hidden" name="_method" value="PATCH">
             <div class="name-box">
