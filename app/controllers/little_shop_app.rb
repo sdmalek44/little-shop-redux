@@ -73,7 +73,7 @@ class LittleShopApp < Sinatra::Base
     Invoice.delete(params[:id])
     redirect '/invoices'
   end
-  
+
   get '/invoices-dashboard' do
     shipped = Invoice.status("shipped")
     returned = Invoice.status("returned")
@@ -91,7 +91,7 @@ class LittleShopApp < Sinatra::Base
 
     erb :'invoices/invoice-dashboard'
   end
-  
+
   get '/items' do
     @items = Item.all
     erb :'items/index'
